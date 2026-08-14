@@ -1,43 +1,60 @@
-# Checkpoint — Sully Abrams (2026-08-13, pre-import-head bind)
+# Checkpoint — Sully Abrams (2026-08-14, statue confirmed; next = stock-host splice)
 
 Resume file. Stock Deadlock `pak01_*` / `game\core` were never modified.
 
 Git snapshot (private): https://github.com/tonesjones/Abrams  
-Commit: `b3ceff6bc21fd8d654409a9b8e5c486a42f1179c` on `main`  
+Earlier snapshot commit: `b3ceff6bc21fd8d654409a9b8e5c486a42f1179c` on `main`  
 Blender scenes (~800 MB each) are **not** in git. They go on GitHub Release `snapshot-pre-import-head`.
 
 ---
 
 ## Status
 
-**Bind is still solved.** User-tested in-match on 2026-08-12. That ship is untouched.
+**Sully head looks good in-match.** Imported GLB head is seated, textured, on the neck.
 
-Screenshot (keep this; do not overwrite):
+**Locomotion is a statue.** Walk / jump / slide / third-person gun do not play. First-person gun still draws. Body is skinned (not a world slab, not 100×). Confirmed on both:
 
-`C:\TestCode\Abrams\in-game-screen\screenshot_working_bind.png`
+- Current Isolation B pack (`release\pak69_dir.vpk`)
+- Aug 12 primitive-head A/B (`release\pak69_aug12_dir.vpk`)
+
+**Root cause:** Isolation B is compiled with `bin_cs2`. That compiler **cannot allocate** `AnimGraph2List` / `NmSkeletonList`. Stock Abrams walk lives in those compiled nodes plus `abrams.vnmskel` and `hero.vnmgraph+abrams.vnmgraph`. Recompiling the whole hero through CSDK will not hook walk.
+
+Tried and **failed** (do not redo):
+
+- GameData `m_sAG2HeroPawnAnimGraph` strings only
+- Same plus `m_animGraph2Refs` / `m_vecNmSkeletonRefs` inside GameData (RERL *did* list the three stock IDs; pawn still did not run the graph)
+- Adding source `AnimGraph2List` — `Failed to allocate an instance of class 'AnimGraph2List'`
+- `bin` / `bin_tools` — `ParticleFloatType_t` schema abort
+
+**Next work (agreed, not started):** do **not** run `make_clean_vmdl.py` / `compile_and_pack.ps1` on the hero. Keep **stock compiled** `abrams.vmdl_c` as the host (`model_work\abrams_backup.vmdl_c`). Graft the already-built Sully head into it. Recommended: also graft Isolation B’s already-cut body (no glasses). Glasses live on the stock body; a face-only splice brings glasses back.
+
+Head and body meshes are done. Remaining work is a binary graft, not Blender.
+
+In-match shots (do not overwrite the Aug 12 one):
+
+- `in-game-screen\screenshot_working_bind.png` — Aug 12, primitive head, gun already on the floor
+- `in-game-screen\screenshot_aug-latest.png` — imported head, statue + gun on the floor
+
+Blender seat preview:
+
+`model_work\sully_export\import_head_preview.png`
 
 | Piece | Result |
 |--------|--------|
-| Body / coat / pants | Teal fur + purple spots, on the character, animating |
-| Glasses | Gone |
-| Live head | Primitive teal blob: tiny horn nubs, googly green eyes, two fangs |
-| HUD portrait | Already good Sully card (leave it) |
+| Body / coat / pants | Teal fur + purple spots. Isolation B body FBX, glasses cut |
+| Glasses | Gone on Isolation B body; will return if we splice face onto **stock** body |
+| Live head | Imported Sully + eyes, 2599 verts, 100% `head`, center `(0, 3.361, 103)` |
+| HUD portrait | Good Sully card — leave it |
+| Walk / jump / slide | Broken on every Isolation B compile |
 
-**Head-bind work has not started.** User said stop and snapshot first.
+Imported mesh (local only, not GameBanana):
 
-Imported mesh (enough; do not hunt for more):
+`C:\TestCode\Abrams\model_work\import_head\sully.glb`
 
-`C:\TestCode\Abrams\model_work\import_head\sully.glb` (5,843,120 bytes, 2026-08-13 8:28 PM)
-
-Inspected in Blender 4.5:
-
-- Full-body Dreamlight Valley Sully, not a head-only mesh
-- Body `Object_82`: 5792 verts / 9734 tris, UVs, 76 Bip001 groups
-- Eyes `Object_83`: 292 verts / 528 tris, material `sully_eyes.002`
-- Textures: 3× 2048 maps in `model_work\import_head\textures\` (color, normal, extra)
-- Their skeleton is discarded; we rebind to Abrams `head`
-- Next work (when told): cut head at neck, scale to face center `(0, 3.36, 103)`, same skinned FBX path
-- Local addon only. Do not put this mesh in `BlueSpot_Monster_Abrams.zip` / GameBanana copy
+- Full-body Dreamlight Valley Sully. Their skeleton is discarded; rebound to Abrams `head`
+- Cut at neck (token head/neck/face groups, w>=0.40), joined `Object_83` eyes
+- Scaled 1.632× to stock face height 20.69 in
+- Color/normal copied over `sully_textures\abrams_head_*`
 
 Portrait target (HUD, leave it):
 
@@ -45,45 +62,66 @@ Portrait target (HUD, leave it):
 
 ---
 
-## Working ship (do not replace blindly)
+## VPKs and hosts
 
-`C:\TestCode\Abrams\release\pak69_dir.vpk` (29,527,586 bytes, 2026-08-12 8:08 PM)
+| Path | What |
+|------|------|
+| `release\pak69_dir.vpk` | Latest Isolation B: imported head + GameData AG2 refs + RERL graph/skel. **Still a statue.** |
+| `release\pak69_aug12_dir.vpk` | Aug 12 primitive-head A/B (real `.vpk` name). **Also a statue.** Use this for DMM A/B, not the `.bak` filename. |
+| `release\pak69_dir.vpk.bak_pre_import_head` | Same bytes as Aug 12. DMM rejects this name. |
+| `release\pak69_imported_head_static_dir.vpk` | Imported head before AG2 GameData patch. Statue. |
+| `release\pak69_isolationA_dir.vpk` | Stock 3D + Sully textures. Glasses come back. Same CSDK path — **not** a walk fix. |
+| `model_work\abrams_backup.vmdl_c` | **Stock compiled Abrams. Host for the next splice.** ~8.6 MB. Has AG2 + vnmskel. |
+| CSDK compiled Isolation B | `tools\Reduced_CSDK_12\game\citadel_addons\sully_abrams\models\heroes_wip\abrams\abrams.vmdl_c` — **donor** of face/body mesh blocks only |
 
-Compiled model: `abrams.vmdl_c` = 1,521,352 bytes  
-Inspected bounds: body ~2.8 m tall, Sully head at z≈2.64 m.
-
-Fallback if a later head pass breaks the bind:
-
-`C:\TestCode\Abrams\release\pak69_isolationA_dir.vpk`  
-(stock 3D Abrams + Sully textures/portraits — glasses come back)
+Inspected Isolation B bounds (pass for scale, not for anims): body size z ≈ 2.81, head center z ≈ 2.62.
 
 ---
 
-## Working pipeline (use this, nothing else)
+## Next session — do this
+
+1. Read this file. Do **not** recompile Isolation B to “fix walk.”
+2. Splice Sully face (+ recommended cut body) into **stock** `model_work\abrams_backup.vmdl_c`.
+3. Keep stock AnimGraph2 / vnmskel / gun / book / attachments.
+4. Pack a new `*_dir.vpk` whose `abrams.vmdl_c` is the spliced stock host + current `sully_textures`. Do **not** ship the 1.4 MB Isolation B model as the hero.
+5. Before asking the user to install: body ~2.8 m, head on the neck, RERL still has the three stock graph/skel refs.
+6. User installs only that new VPK, full restart. Leave HUD portraits alone.
+
+Splice recipe:
+
+1. Host = `model_work\abrams_backup.vmdl_c`
+2. Donor meshes from current Isolation B compile (CTRL `embedded_meshes` + vert counts)
+3. Replace stock face (and body if keeping no-glasses) MVTX/MIDX/MDAT
+4. Update CTRL counts/bounds; head remap = 100% `head`
+5. Pack; confirm AG2/vnmskel RERL still present
+
+---
+
+## Working pipeline (meshes only — already done)
+
+Do not rerun this to fix walk. Kept so the donor FBXs can be rebuilt if a blend is lost.
 
 1. Cut stock head/glasses off the body (token bone-name match, **not** substring `lip`).
-2. Build / seat Sully head in inches at stock face center `(0, 3.36, 103)`.
-3. Vertex groups: body keeps the imported Abrams groups; head is 100% `head`.
-4. Parent to the **original unedited** armature with `matrix_parent_inverse` (keep world transform). Armature modifier on. **Never** `head.parent = arm` without keep_transform.
-5. Scene units: imperial inches, `scale_length = 0.0254`.
-6. Export FBX **with armature** (`object_types={'ARMATURE','MESH'}`, `add_leaf_bones=False`, `use_armature_deform_only=True`, default axes `-Z` / `Y`, `apply_unit_scale=True`, `FBX_SCALE_UNITS`).
-7. Clean community-shaped vmdl via `make_clean_vmdl.py B --scale 1.0` (stock gun/book DMX + custom body/face FBX, `AnimIncludeModel` → `abrams_backup.vmdl`, **no** NmSkeleton / AnimGraph2 / compiled Skeleton dump).
-8. Compile with **`bin_cs2`** only. Pack with `VtexPacker.exe` (not `dotnet run` — PATH is wiped by the compiler script).
+2. Seat Sully head in inches at `(0, 3.36, 103)`, 100% `head`.
+3. Parent to the **original unedited** armature with `matrix_parent_inverse`. **Never** `head.parent = arm` without keep_transform.
+4. Export FBX **with armature** (`object_types={'ARMATURE','MESH'}`, `add_leaf_bones=False`, `use_armature_deform_only=True`, axes `-Z` / `Y`, `apply_unit_scale=True`, `FBX_SCALE_UNITS`).
+5. Isolation B compile is **only** a mesh donor now. Do not ship that `vmdl_c` as the live hero.
 
-Scripts for that path:
+Scripts:
 
 | Script | Role |
 |--------|------|
-| `model_work\export_sully_skinned.py` | Rebind existing cut blend + export skinned FBX (the one that worked) |
-| `model_work\export_sully_meshonly.py` | Builds the cut + head into `sully_cut.blend` (then run skinned export) |
-| `model_work\make_clean_vmdl.py` | Isolation A/B vmdl |
-| `model_work\compile_and_pack.ps1` | `bin_cs2` compile + pack |
-| `model_work\inspect_import_head.py` | Read-only inspect of `import_head\sully.glb` |
+| `model_work\build_import_head.py` | Cut imported GLB head, seat at FACE_CENTER, write `sully_cut.blend` |
+| `model_work\export_sully_skinned.py` | Rebind cut blend + export skinned FBX |
+| `model_work\export_sully_meshonly.py` | Old primitive-head builder — **do not rerun** |
+| `model_work\make_clean_vmdl.py` | Isolation A/B vmdl — **do not use to ship walk** |
+| `model_work\compile_and_pack.ps1` | `bin_cs2` compile + pack — **do not use to ship walk** |
 
 Working Blender files:
 
-- `model_work\sully_export\sully_skinned.blend` — last successful bind/export
-- `model_work\sully_export\sully_cut.blend` — cut body + primitive head
+- `model_work\sully_export\sully_skinned.blend` — last skinned export (imported head)
+- `model_work\sully_export\sully_cut.blend` — cut body + imported head
+- `model_work\sully_export\sully_cut.blend.bak_pre_import` — cut body + primitive head
 - Face center after ×39.37: `(-0, 3.361, 102.962)`
 
 ---
@@ -92,7 +130,7 @@ Working Blender files:
 
 On `main` (private repo):
 
-- `CHECKPOINT.md`, scripts, working + fallback VPKs, textures, portraits, in-game shot
+- `CHECKPOINT.md`, scripts, VPKs, textures, portraits, in-game shots
 - `model_work\import_head\sully.glb` + inspect previews/textures
 - Packer source under `tools\VtexPacker\`, `tools\deadmod_src\`
 
@@ -102,56 +140,39 @@ Not in git (too big or reinstallable):
 - `tools\Reduced_CSDK_12\`, Blender install, compiler copies
 - Stock `abrams.gltf` / `vmdl_src\` extracts, leftover `disabled_vpks\`
 
-Restore if the next bind pass wrecks the live files:
-
-1. `git checkout main -- release/pak69_dir.vpk CHECKPOINT.md`
-2. Re-download the two `.blend` files from the Release into `model_work\sully_export\`
-3. Install only `release\pak69_dir.vpk`, full restart
-
 ---
 
 ## Mistakes — do not repeat
 
-### Bind / compile (solved)
+### Bind / compile
 
 | Mistake | What happened |
 |---------|----------------|
-| Texture-only paint on stock Abrams UVs | Face still read as Abrams + glasses. Ruled out. |
+| Texture-only paint on stock Abrams UVs | Face still read as Abrams + glasses. |
 | Voxel remesh of the whole head | Features melted into a bowling ball. |
-| Mesh-only FBX (`object_types={'MESH'}`, no armature) | No skin clusters. Mesh sat in the world as a giant teal slab in the menu. |
-| Inch numbers + Blender meters + `FBX_SCALE_NONE` + `axis_up='Z'` | Compiled ~100× too big (2.54×39.37). Camera inside the mesh. |
-| Flatten `matrix_world` into verts + identity + unparent | Destroyed the armature relationship. |
-| `head.parent = arm` without keep_transform | Yanked the head to the armature origin. |
-| 14k-line **stock decompiled** vmdl as source (LODs, leftover weight lists, NmSkeleton, AnimGraph2) | Red wireframe explosion in first person. |
-| Substring match `"lip"` when deleting head verts | Hits `flip_a_page_*` and deletes book/page verts. Use **token** match. |
-| Compile with `bin` / `bin_tools` | `ParticleFloatType_t` schema mismatch. Use `bin_cs2`. |
+| Mesh-only FBX (`object_types={'MESH'}`, no armature) | Giant unskinned teal slab. |
+| Inch numbers + meters + `FBX_SCALE_NONE` + `axis_up='Z'` | Compiled ~100× too big. |
+| Flatten `matrix_world` into verts + unparent | Destroyed the armature relationship. |
+| `head.parent = arm` without keep_transform | Head yanked to armature origin. |
+| 14k-line **stock decompiled** vmdl as CSDK source | Red wireframe explosion in first person. |
+| Substring match `"lip"` when deleting head verts | Hits `flip_a_page_*`. Use **token** match. |
+| Compile with `bin` / `bin_tools` | `ParticleFloatType_t` schema mismatch. |
 | Live Deadlock DLLs mixed with CSDK | Missing `modeldoc_utils` (126/127). |
-| DepotDownloader / Steam QR | Not needed. Do not redo. |
 | Write into Steam `pak01_*` or `game\core` | Forbidden. Addon VPK only. |
-| Leave source `*.vmat` in the addon content folder | Compiler tries to rebuild them and fails on missing PNGs. |
-| `dotnet run` after compile script sets PATH to `bin_cs2` | `dotnet` not found. Call `tools\VtexPacker\bin\Release\net8.0\VtexPacker.exe`. |
-| Portrait box-project / CLIP mix on the fur shader | Black portrait background painted the snout black. |
-| Orphan `pak08` / `pak69` / `pak90` in `addons` | Skin stayed on after DMM disable. DMM does not remove orphans. |
-| Download / pack official-game Sulley into a public zip | Local addon only. Sketchfab CC BY does not license a Dreamlight Valley rip. |
-
-### Head quality (still open)
-
-The live head is joined spheres. The imported GLB is the next shape source. Do **not** voxel-remesh it. Do **not** invent a new compile path.
-
----
-
-## Next session — do this
-
-1. Read this file. Do not “try a new compile path.”
-2. Only after the user says to start: cut the imported Sulley **head** off the body, seat at `(0, 3.36, 103)`, 100% `head` weights, keep-transform parent.
-3. Re-export with `export_sully_skinned.py` (or the same FBX flags). Do **not** go back to mesh-only.
-4. `make_clean_vmdl.py B --scale 1.0` then `compile_and_pack.ps1`.
-5. Before asking the user to install: inspect compiled glTF bounds (body ~2.8 m, head on the neck). If body is ~280 m, scale is broken again — do not ship.
-6. User installs only `release\pak69_dir.vpk`, full restart. Leave HUD portraits alone.
+| Source `*.vmat` in the addon content folder | Compiler rebuilds them and fails. |
+| `dotnet run` after compile script wipes PATH | Call `tools\VtexPacker\bin\Release\net8.0\VtexPacker.exe`. |
+| Orphan `pak08` / `pak69` / `pak90` in `addons` | DMM does not remove orphans. |
+| Pack Dreamlight Valley Sully in a public zip | Local addon only. |
+| Isolation B recompile to fix walk | Statue. `bin_cs2` cannot emit AG2/NmSkeleton. |
+| GameData / RERL AG2 strings only | RERL IDs matched stock; pawn still a statue. |
+| Source `AnimGraph2List` in the vmdl | Allocate failure. |
+| DMM on `*.bak_pre_import_head` | Not a `.vpk`. Use `pak69_aug12_dir.vpk`. |
+| Face-only splice into stock without handling glasses | Stock body still has glasses. |
+| `export_sully_meshonly.py` | Rebuilds the primitive blob head. |
 
 ---
 
-## Verify compile scale (mandatory before ship)
+## Verify scale (if a donor mesh is rebuilt)
 
 ```
 blender --background --python model_work\inspect_compiled.py
@@ -159,6 +180,12 @@ blender --background --python model_work\inspect_compiled.py
 
 Pass: body size z ≈ 2.8, head center z ≈ 2.6.  
 Fail: body size z ≈ 280 (100×) or groups-less mesh-only slab.
+
+After a stock-host splice, also confirm RERL still lists:
+
+- `animgraphs/animgraph2/hero/hero.vnmgraph+abrams.vnmgraph`
+- `animgraphs/animgraph2/hero/hero_ui.vnmgraph+abrams.vnmgraph`
+- `models/heroes_wip/abrams/abrams.vnmskel`
 
 ---
 

@@ -161,6 +161,68 @@ def bodygroup_block(mesh_names: list[str], include_face: bool) -> str:
 			}}"""
 
 
+def patch_hero_gamedata(block: str) -> str:
+    """Point the pawn at stock Abrams AG2 graphs. Decompile dropped these keys."""
+    needle = "\t\t\t\t\t\t\tm_flTurnDuration = 0.5\n\t\t\t\t\t\t}"
+    inject = (
+        "\t\t\t\t\t\t\tm_flTurnDuration = 0.5\n"
+        '\t\t\t\t\t\t\tm_sAG2UIAnimGraph = resource_name:"animgraphs/animgraph2/hero/hero_ui.vnmgraph+abrams.vnmgraph"\n'
+        '\t\t\t\t\t\t\tm_sAG2HeroPawnAnimGraph = resource_name:"animgraphs/animgraph2/hero/hero.vnmgraph+abrams.vnmgraph"\n'
+        "\t\t\t\t\t\t\tm_bUseAG2HeroGraph = true\n"
+        "\t\t\t\t\t\t\tm_bUseAG2UIGraph = true\n"
+        "\t\t\t\t\t\t\tm_animGraph2Refs =\n"
+        "\t\t\t\t\t\t\t[\n"
+        "\t\t\t\t\t\t\t\t{\n"
+        '\t\t\t\t\t\t\t\t\tm_sIdentifier = ""\n'
+        '\t\t\t\t\t\t\t\t\tm_hGraph = resource:"animgraphs/animgraph2/hero/hero.vnmgraph+abrams.vnmgraph"\n'
+        "\t\t\t\t\t\t\t\t},\n"
+        "\t\t\t\t\t\t\t\t{\n"
+        '\t\t\t\t\t\t\t\t\tm_sIdentifier = "ui"\n'
+        '\t\t\t\t\t\t\t\t\tm_hGraph = resource:"animgraphs/animgraph2/hero/hero_ui.vnmgraph+abrams.vnmgraph"\n'
+        "\t\t\t\t\t\t\t\t},\n"
+        "\t\t\t\t\t\t\t]\n"
+        "\t\t\t\t\t\t\tm_vecNmSkeletonRefs =\n"
+        "\t\t\t\t\t\t\t[\n"
+        '\t\t\t\t\t\t\t\tresource:"models/heroes_wip/abrams/abrams.vnmskel",\n'
+        "\t\t\t\t\t\t\t]\n"
+        "\t\t\t\t\t\t}"
+    )
+    if needle not in block:
+        raise SystemExit("GameData CCitadelHeroModelGameData_t block not in expected shape")
+    return block.replace(needle, inject, 1)
+
+
+def nmskeleton_block() -> str:
+    return """			{
+				_class = "NmSkeletonList"
+				children =
+				[
+					{
+						_class = "NmSkeletonReference"
+						filename = "models/heroes_wip/abrams/abrams.vnmskel"
+					},
+				]
+			}"""
+
+
+def animgraph2_block() -> str:
+    return """			{
+				_class = "AnimGraph2List"
+				children =
+				[
+					{
+						_class = "DefaultAnimGraph2"
+						filename = "animgraphs/animgraph2/hero/hero.vnmgraph+abrams.vnmgraph"
+					},
+					{
+						_class = "AnimGraph2"
+						name = "ui"
+						filename = "animgraphs/animgraph2/hero/hero_ui.vnmgraph+abrams.vnmgraph"
+					},
+				]
+			}"""
+
+
 def animation_block() -> str:
     return """			{
 				_class = "AnimationList"
@@ -203,6 +265,8 @@ def assemble(
     ):
         if key == "AnimationList":
             children.append(animation_block())
+        elif key == "GameDataList":
+            children.append(patch_hero_gamedata(blocks[key]))
         elif key in blocks:
             children.append(blocks[key])
         else:
