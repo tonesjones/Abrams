@@ -1,20 +1,20 @@
-# Checkpoint — Sully Abrams (2026-08-12 night, bind works)
+# Checkpoint — Sully Abrams (2026-08-13, pre-import-head bind)
 
 Resume file. Stock Deadlock `pak01_*` / `game\core` were never modified.
+
+Git snapshot (private): https://github.com/tonesjones/Abrams  
+Commit: `b3ceff6bc21fd8d654409a9b8e5c486a42f1179c` on `main`  
+Blender scenes (~800 MB each) are **not** in git. They go on GitHub Release `snapshot-pre-import-head`.
 
 ---
 
 ## Status
 
-**Bind is solved.** User-tested in-match. Best iteration so far.
+**Bind is still solved.** User-tested in-match on 2026-08-12. That ship is untouched.
 
 Screenshot (keep this; do not overwrite):
 
 `C:\TestCode\Abrams\in-game-screen\screenshot_working_bind.png`
-
-(Original drop: `in-game-screen\screenshot_aug-12.png` — same shot.)
-
-What the shot shows:
 
 | Piece | Result |
 |--------|--------|
@@ -23,13 +23,25 @@ What the shot shows:
 | Live head | Primitive teal blob: tiny horn nubs, googly green eyes, two fangs |
 | HUD portrait | Already good Sully card (leave it) |
 
-Next session is **head quality only**. Do not touch the compile/bind pipeline except to re-export the improved head through the **working** skinned FBX path.
+**Head-bind work has not started.** User said stop and snapshot first.
 
-Portrait target (live head must read like this):
+Imported mesh (enough; do not hunt for more):
+
+`C:\TestCode\Abrams\model_work\import_head\sully.glb` (5,843,120 bytes, 2026-08-13 8:28 PM)
+
+Inspected in Blender 4.5:
+
+- Full-body Dreamlight Valley Sully, not a head-only mesh
+- Body `Object_82`: 5792 verts / 9734 tris, UVs, 76 Bip001 groups
+- Eyes `Object_83`: 292 verts / 528 tris, material `sully_eyes.002`
+- Textures: 3× 2048 maps in `model_work\import_head\textures\` (color, normal, extra)
+- Their skeleton is discarded; we rebind to Abrams `head`
+- Next work (when told): cut head at neck, scale to face center `(0, 3.36, 103)`, same skinned FBX path
+- Local addon only. Do not put this mesh in `BlueSpot_Monster_Abrams.zip` / GameBanana copy
+
+Portrait target (HUD, leave it):
 
 `C:\TestCode\Abrams\sully_textures\bull_card_psd.png`
-
-Wide face, large round ears, curved horns, brow, broad snout, dark nose, wide toothy smile, teal fur + purple spots. No glasses.
 
 ---
 
@@ -50,7 +62,7 @@ Fallback if a later head pass breaks the bind:
 ## Working pipeline (use this, nothing else)
 
 1. Cut stock head/glasses off the body (token bone-name match, **not** substring `lip`).
-2. Build Sully head in inches at stock face center `(0, 3.36, 103)`.
+2. Build / seat Sully head in inches at stock face center `(0, 3.36, 103)`.
 3. Vertex groups: body keeps the imported Abrams groups; head is 100% `head`.
 4. Parent to the **original unedited** armature with `matrix_parent_inverse` (keep world transform). Armature modifier on. **Never** `head.parent = arm` without keep_transform.
 5. Scene units: imperial inches, `scale_length = 0.0254`.
@@ -66,12 +78,35 @@ Scripts for that path:
 | `model_work\export_sully_meshonly.py` | Builds the cut + head into `sully_cut.blend` (then run skinned export) |
 | `model_work\make_clean_vmdl.py` | Isolation A/B vmdl |
 | `model_work\compile_and_pack.ps1` | `bin_cs2` compile + pack |
+| `model_work\inspect_import_head.py` | Read-only inspect of `import_head\sully.glb` |
 
 Working Blender files:
 
 - `model_work\sully_export\sully_skinned.blend` — last successful bind/export
 - `model_work\sully_export\sully_cut.blend` — cut body + primitive head
 - Face center after ×39.37: `(-0, 3.361, 102.962)`
+
+---
+
+## Git snapshot — what is / is not on GitHub
+
+On `main` (private repo):
+
+- `CHECKPOINT.md`, scripts, working + fallback VPKs, textures, portraits, in-game shot
+- `model_work\import_head\sully.glb` + inspect previews/textures
+- Packer source under `tools\VtexPacker\`, `tools\deadmod_src\`
+
+Not in git (too big or reinstallable):
+
+- `*.blend` / `*.blend1` — Release `snapshot-pre-import-head`
+- `tools\Reduced_CSDK_12\`, Blender install, compiler copies
+- Stock `abrams.gltf` / `vmdl_src\` extracts, leftover `disabled_vpks\`
+
+Restore if the next bind pass wrecks the live files:
+
+1. `git checkout main -- release/pak69_dir.vpk CHECKPOINT.md`
+2. Re-download the two `.blend` files from the Release into `model_work\sully_export\`
+3. Install only `release\pak69_dir.vpk`, full restart
 
 ---
 
@@ -97,35 +132,22 @@ Working Blender files:
 | `dotnet run` after compile script sets PATH to `bin_cs2` | `dotnet` not found. Call `tools\VtexPacker\bin\Release\net8.0\VtexPacker.exe`. |
 | Portrait box-project / CLIP mix on the fur shader | Black portrait background painted the snout black. |
 | Orphan `pak08` / `pak69` / `pak90` in `addons` | Skin stayed on after DMM disable. DMM does not remove orphans. |
+| Download / pack official-game Sulley into a public zip | Local addon only. Sketchfab CC BY does not license a Dreamlight Valley rip. |
 
 ### Head quality (still open)
 
-The working head is joined spheres. In-game it reads as a teal potato with horn nubs, not the portrait. Next pass must change **shape**, not just the albedo.
-
-Missing vs portrait:
-
-- Large round side ears
-- Longer curved horns (out and up)
-- Wider chubby cheeks
-- Real brow ridge
-- Broader forward snout + dark nose
-- Wide smile, many upper teeth, small lower fangs
-- Eyes larger, more human-set, green iris + white sclera (not tiny googly dots)
-
-Do **not** voxel-remesh the finished head. Keep parts readable, or remesh only the fur volume at a fine voxel size and keep eyes/horns/teeth/nose as separate shells.
+The live head is joined spheres. The imported GLB is the next shape source. Do **not** voxel-remesh it. Do **not** invent a new compile path.
 
 ---
 
 ## Next session — do this
 
 1. Read this file. Do not “try a new compile path.”
-2. Improve the head in `sully_skinned.blend` / a new builder that **feeds the same skinned export**.
+2. Only after the user says to start: cut the imported Sulley **head** off the body, seat at `(0, 3.36, 103)`, 100% `head` weights, keep-transform parent.
 3. Re-export with `export_sully_skinned.py` (or the same FBX flags). Do **not** go back to mesh-only.
 4. `make_clean_vmdl.py B --scale 1.0` then `compile_and_pack.ps1`.
 5. Before asking the user to install: inspect compiled glTF bounds (body ~2.8 m, head on the neck). If body is ~280 m, scale is broken again — do not ship.
-6. User installs only `release\pak69_dir.vpk`, full restart.
-
-Optional later: project the portrait onto front-facing UVs **after** the silhouette is right, ignoring near-black pixels.
+6. User installs only `release\pak69_dir.vpk`, full restart. Leave HUD portraits alone.
 
 ---
 
