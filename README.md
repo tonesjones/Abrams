@@ -1,168 +1,155 @@
 # Abrams → Sully (Deadlock model mod)
 
-Private engineering repo for a *Deadlock* Abrams skin themed as a blue-furred, purple-spotted monster (Sulley / Monsters Inc. fan look).
+Private engineering repo for a local *Deadlock* Abrams skin: teal fur, purple spots, imported Sully head, stock locomotion.
 
-**This README is a handoff document** for a human or another LLM: goal, current state, what already works, what failed, and what to do next. For the short operational resume, also read **`CHECKPOINT.md`**.
+**This README is the method record.** If you are about to “try a new compile path” or patch AnimGraph2 strings into an Isolation B model, stop. That already failed. The working approach is **stock-host mesh splice**.
 
-Public install notes for the texture-era zip live under `release/README.md`. Do **not** put the imported Dreamlight Valley mesh into any public GameBanana zip.
+Short operational resume: `CHECKPOINT.md`.  
+Public GameBanana notes (texture-era zip only): `release/README.md`.  
+Do **not** put `model_work/import_head/sully.glb` in any public zip.
+
+Stock Deadlock `pak01_*` / `game\core` are never modified. Addon VPK only.
 
 ---
 
-## Goal
-
-Ship a local Deadlock **addon VPK** that:
-
-1. Makes Abrams look like Sully (teal fur, purple spots, no glasses).
-2. Replaces the **3D head** with a proper Sully mesh (not just a recolored Abrams face).
-3. Keeps **stock walk / jump / slide / gun attach / abilities** animating.
-4. Leaves **HUD portraits** as the already-good Sully cards.
-5. Never writes into Steam `pak01_*` or `game\core` — **addon VPK only**.
-
-### Success criteria (in-match)
-
-| Check | Target |
-|--------|--------|
-| Head | Readable Sully head on the neck |
-| Body | Teal coat/pants with spots, glasses gone |
-| Locomotion | Legs cycle; jump/slide play |
-| Gun (third person) | Stays in the hand, not on the floor |
-| First person | Still usable |
-| Portraits | Unchanged Sully UI cards |
-
-### Current state (2026-08-14)
+## Current ship
 
 | Item | Status |
 |------|--------|
-| Sully head mesh + textures | **Done** — looks good in-match |
-| Body recolor + no glasses (Isolation B body) | **Done** |
-| HUD portraits | **Done** — leave alone |
-| Walk / jump / slide | **Broken** — character is a skinned statue |
-| Third-person gun | **On the floor** (same as statue; bind pose) |
-| Next agreed approach | Graft meshes into **stock compiled** `abrams.vmdl_c` (not another CSDK Isolation B recompile) |
+| Install | `release/pak69_stockhost_dir.vpk` |
+| Head | Imported Sully, 2577 verts, 100% `head`, on the neck |
+| Body | Isolation B cut body (teal + spots, **no glasses**) |
+| HUD portraits | Done — leave alone |
+| Locomotion | Stock ANIM + AG2 + `vnmskel` kept on the host (300 sequences). User signed off on this splice. |
+| Gun / book | Stock meshes left on the host |
+
+Rollback of the addon returns pak01 Abrams. The previous statue pack is `release/pak69_dir.vpk`.
 
 ---
 
-## Hard rules
+## The method that works
 
-1. **Addon VPK only.** Never modify Steam `pak01_*` or `game\core`.
-2. **Local mesh only.** `model_work/import_head/sully.glb` is a Dreamlight Valley rip for local testing. Do **not** ship it in `BlueSpot_Monster_Abrams.zip` / GameBanana.
-3. **Do not invent a new compile path** for “maybe this will animate.” Isolation B + `bin_cs2` is a dead end for locomotion.
-4. **Do not remesh** the imported head (voxel remesh melted features into a bowling ball).
-5. **Do not** rerun `export_sully_meshonly.py` (rebuilds the primitive blob head).
-6. DMM needs a real `*_dir.vpk` name. Files like `*.bak_pre_import_head` are rejected.
-7. One Sully VPK at a time. Orphan `pak08`/`pak69`/`pak90` left in `addons` will keep old skins after DMM disable — move orphans to `disabled_vpks\`.
+Deadlock hero walk does **not** come from FBX weights alone, and it does **not** come from putting graph *paths* in GameData.
 
----
+Walk lives on the **stock compiled** `abrams.vmdl_c` (~8.6 MB):
 
-## Architecture (what we learned)
+| Piece | Why it matters |
+|--------|----------------|
+| `ANIM` (~4 MB) | Actual sequences: run, jump, slide, melee, abilities (~300 clips) |
+| `ASEQ` / `AGRP` | Sequence groups the pawn/graph play |
+| `DATA.m_animGraph2Refs` | Top-level CModel resource handles, **flagged as resources**, not GameData strings |
+| `DATA.m_vecNmSkeletonRefs` | `models/heroes_wip/abrams/abrams.vnmskel` |
+| `RERL` | Same three IDs the stock pawn already knows |
+| 489-bone `m_modelSkeleton` | What those clips are bound to |
 
-Deadlock heroes do **not** get walk cycles from a few FBX skin weights alone.
+`heroes.vdata` only points at `models/heroes_wip/abrams/abrams.vmdl`. The graph is expected **on the model**.
 
-Stock compiled Abrams (`model_work/abrams_backup.vmdl_c`, ~8.6 MB) includes:
+### What to do (and nothing else)
 
-- Skeleton (489 bones; names match our custom mesh)
-- **AnimGraph2** references:
-  - `animgraphs/animgraph2/hero/hero.vnmgraph+abrams.vnmgraph`
-  - `animgraphs/animgraph2/hero/hero_ui.vnmgraph+abrams.vnmgraph`
-- **NmSkeleton**: `models/heroes_wip/abrams/abrams.vnmskel`
-- Full animation-related payload used by the pawn
+1. **Host** = untouched stock compile: `model_work/abrams_backup.vmdl_c`.
+2. **Donor** = Isolation B `bin_cs2` compile of the custom body + face FBX. Use it **only** as a mesh factory. Never ship that 1.4 MB file as the live hero.
+3. **Splice** donor `MVTX` / `MIDX` / `MDAT` onto the host:
+   - Keep stock mesh **names** (`abrams_model`, `abrams_face_model`, plus LOD aliases) so bodygroups still match.
+   - Point every body LOD at the donor body buffers; every face LOD at the donor face buffers.
+   - Leave `gun_model*` and `book_model*` as stock.
+4. **Remap bones by name**, not by index. Isolation B and stock both have 489 bones, but the **order differs** (cloth is `$cloth_*` on stock and `_cloth_*` on the donor). Translate each donor remap entry → bone name → stock index.
+5. Rewrite only `CTRL` and `DATA` (Python `keyvalues3` as KV3 v0 / `VKV3` uncompressed). Leave `ANIM`, `ASEQ`, `AGRP`, `PHYS`, `DSTF`, `RERL`, `RED2` **byte-identical**.
+6. Pack the spliced host as `models/heroes_wip/abrams/abrams.vmdl_c` plus `sully_textures/`. Do **not** also pack `abrams_backup.vmdl_c` as an AnimInclude — the host already has the graph.
 
-Community “Isolation B” path (CSDK `make_clean_vmdl.py B` + custom body/face FBX + stock gun/book DMX) compiles with **`bin_cs2` only**. That compiler:
+```
+python tools\SpliceHost\splice.py splice
+tools\VtexPacker\bin\Release\net8.0\VtexPacker.exe `
+  sully_textures `
+  release\pak69_stockhost_dir.vpk `
+  models/heroes_wip/abrams/abrams.vmdl_c `
+  model_work\abrams_spliced.vmdl_c
+```
 
-- **Cannot allocate** `AnimGraph2List` / `NmSkeletonList` (`Failed to allocate an instance of class 'AnimGraph2List'`)
-- Produces a ~1.4 MB model that is **skinned correctly in bind pose** but never runs the hero graph
+Requires `pip install keyvalues3`.
 
-Result: mesh sits on the character at the right scale, but **does not pose for walk/jump/slide**. Third-person gun sits at the weapon bone rest (on the floor). First-person gun can still appear.
+### Glasses
 
-`heroes.vdata` only points at `models/heroes_wip/abrams/abrams.vmdl` — the anim graph is expected on the **model**, not as a separate hero-vdata override we found.
+Stock **body** still has glasses. Face-only splice puts Sully’s face on Abrams-with-glasses. Always splice the Isolation B **cut body** (head/glasses already removed) together with the face.
 
----
+### Why Isolation B as the live hero can never walk
 
-## Timeline of attempts
+`bin_cs2` cannot allocate `AnimGraph2List` / `NmSkeletonList`. The compile is a correctly skinned **bind-pose statue** (~1.4 MB, ANIM ≈ 589 bytes). Third-person gun sits at the weapon bone rest (on the floor). First-person gun can still draw.
 
-### Phase 1 — Texture / portrait only
+Putting graph paths in GameData, or adding the same IDs to RERL, does not give the pawn the 4 MB sequence payload or the compiled CModel AG2 nodes. The engine then has a mesh and some strings, and nothing to play.
 
-- Recolor coat/upper/lower/gun/teeth; custom HUD portraits.
-- **Issue:** Stock head UV still read as Abrams; glasses remained.
-- Ruled out texture-only for “looks like Sully in 3D.”
+### Why this splice is not “just RERL again”
 
-### Phase 2 — Procedural / primitive head
+Failed Phase 4 patched strings onto Isolation B (no ANIM). This splice keeps stock ANIM and stock CModel AG2 fields, and only replaces render-mesh blocks.
 
-- Built a joined-sphere Sully-ish head in Blender, cut stock head/glasses off the body, skinned FBX, Isolation B compile.
-- **In-match (2026-08-12):** body recolor + glasses gone + primitive head on neck. Scale OK (~2.8 m body).
-- **Misleading checkpoint language:** “bind solved / animating” meant *skinned and attached*, not *locomotion sequences play*. Gun was already on the floor in `in-game-screen/screenshot_working_bind.png`.
-- Pack: later copied to `release/pak69_aug12_dir.vpk` for DMM A/B.
+### Verify before asking anyone to install
 
-### Phase 3 — Imported Dreamlight Sully head
+```
+python tools\SpliceHost\splice.py inspect model_work\abrams_spliced.vmdl_c
+```
 
-- Source: `model_work/import_head/sully.glb` (full body + eyes).
-- Pipeline that worked for **mesh placement**:
-  1. `build_import_head.py` — bake armature-deformed mesh, cut head (token groups, w≥0.40), join eyes, seat at face center `(0, 3.361, 103)`, scale 1.632× to stock face height 20.69 in, 100% `head` weights.
-  2. `export_sully_skinned.py` — parent with keep-transform, export FBX **with armature**.
-  3. `make_clean_vmdl.py B --scale 1.0` + `compile_and_pack.ps1` (`bin_cs2` + `VtexPacker.exe`).
-- Head textures: `import_head/textures/Image_0.png` / `Image_1.png` → `sully_textures/abrams_head_*`.
-- **In-match:** face looks good; still a statue (same as Phase 2 for locomotion).
+Must still list the three RERL graph/skel paths and `m_animGraph2Refs`. Then, optional Blender check after a Source2Viewer glTF export:
 
-### Phase 4 — Try to hook AnimGraph2 without rewriting the model
+```
+blender --background --python model_work\inspect_spliced.py
+```
 
-All **failed** (still a statue):
-
-| Attempt | Result |
-|---------|--------|
-| GameData `m_sAG2HeroPawnAnimGraph` / `m_sAG2UIAnimGraph` + `m_bUseAG2* = true` | Fields appear in compiled DATA; no walk |
-| Same + `m_animGraph2Refs` / `m_vecNmSkeletonRefs` in GameData | Compiler added correct **RERL** IDs for graphs + `abrams.vnmskel`; pawn still did not animate |
-| Source `AnimGraph2List` / `NmSkeletonList` in the vmdl | `bin_cs2`: Failed to allocate `AnimGraph2List` |
-| Compile with `bin` or `bin_tools` | Schema abort (`ParticleFloatType_t`) |
-| A/B install of Aug 12 primitive pack | Confirmed **same statue** — not a regression from the new head |
-
-### Phase 5 — Agreed next plan (not started)
-
-**Do not recompile Isolation B as the live hero.**
-
-1. Host = stock compiled model: `model_work/abrams_backup.vmdl_c` (~8.6 MB, has AG2 + vnmskel).
-2. Donor meshes = current Isolation B compile (face + recommended cut body).
-3. Binary-graft / splice mesh blocks into the stock host (MVTX/MIDX/MDAT + CTRL counts/bounds + head bone remaps).
-4. Pack spliced stock host as `models/heroes_wip/abrams/abrams.vmdl_c` + existing `sully_textures`.
-5. Verify RERL still has the three stock graph/skel entries; body ~2.8 m; head on neck; then in-match walk test.
-
-**Glasses catch:** stock **body** still has glasses geometry. Face-only splice brings glasses back. Recommended graft = **Sully face + Isolation B body** (head/glasses already cut).
+| Check | Pass |
+|--------|------|
+| Body, armature-deformed | size z ≈ **2.81 m** |
+| Face | 2577 verts, **100% `head`**, center z ≈ **2.62 m** |
+| RERL | `hero.vnmgraph+abrams.vnmgraph`, UI graph, `abrams.vnmskel` |
+| Sequences | Source2Viewer `--gltf_export_animations` lists `primary_run_*`, `jump_*`, `slide_*` |
+| Fail | body z ≈ 280 (100×) or a groups-less world slab |
 
 ---
 
-## Issues and dead ends (do not repeat)
+## Same method on a different hero
 
-### Mesh / Blender
+Do not start from a community Isolation vmdl and try to “hook anims” afterward.
 
-| Issue | Lesson |
-|-------|--------|
-| Texture paint on stock Abrams UVs | Face still Abrams + glasses |
-| Voxel remesh whole head | Bowling-ball melt |
-| Mesh-only FBX (no armature) | Unskinned giant teal slab in menu |
-| Inch verts + meter scene + bad FBX scale/axes | ~100× scale (camera inside mesh) |
-| Flatten world matrix into verts / bad parent | Breaks skin |
-| `head.parent = arm` without keep_transform | Head at armature origin |
+1. Extract that hero’s **stock compiled** `*.vmdl_c` and freeze it as the host.
+2. Confirm it has a large `ANIM` block plus `m_animGraph2Refs` / `m_vecNmSkeletonRefs` in DATA.
+3. Build custom meshes as a throwaway `bin_cs2` donor (same bone *names* as the stock skeleton).
+4. Splice donor mesh blocks into the host. Keep stock mesh names. Translate remaps by bone name.
+5. Do not rewrite ANIM / RERL. Do not compile the live hero with `bin` / `bin_tools` / `bin_cs2`.
+
+The splice implementation to copy is `tools/SpliceHost/splice.py` + `resource_io.py`.
+
+---
+
+## What failed (do not retry)
+
+Wrong *idea*, not “we almost had it.”
+
+| Idea | What actually happens |
+|------|------------------------|
+| Recolor stock face UVs | Still Abrams + glasses |
+| Voxel remesh the imported head | Features melt into a bowling ball |
+| Mesh-only FBX (no armature) | Giant unskinned teal slab |
+| Inch verts + meter scene + `FBX_SCALE_NONE` / `axis_up='Z'` | ~100× scale |
+| Flatten world matrix / parent without keep_transform | Skin or head jumps to origin |
+| 14k-line **stock decompiled** vmdl as CSDK source | Red first-person wireframe explosion |
 | Substring `"lip"` when deleting head verts | Hits `flip_a_page_*` book verts — use **token** match |
-| Imported GLB bind pose vs deformed pose | Must bake **armature-deformed** mesh before cut; raw verts are wrong |
-
-### Compile / packing
-
-| Issue | Lesson |
-|-------|--------|
-| Full stock decompiled vmdl as CSDK source | Red wireframe explosion in first person |
-| `bin` / `bin_tools` | Schema mismatch — use `bin_cs2` for mesh compile only |
+| `bin` / `bin_tools` compile | `ParticleFloatType_t` schema abort |
 | Live Deadlock DLLs mixed with CSDK | Missing `modeldoc_utils` |
-| Source `*.vmat` in addon content | Compiler rebuilds and fails on missing PNGs |
-| `dotnet run` after compile script | PATH wiped — call `VtexPacker.exe` directly |
-| Orphan addon pak numbers | Skin sticks after DMM disable |
+| Source `*.vmat` in addon content | Compiler rebuilds and dies |
+| GameData / RERL AG2 **strings** on Isolation B | RERL IDs can match stock; pawn still a statue |
+| Source `AnimGraph2List` in the CSDK vmdl | `Failed to allocate an instance of class 'AnimGraph2List'` |
+| Isolation B recompile to “fix walk” | Same statue, new mesh |
+| Face-only splice into stock | Glasses come back |
+| `export_sully_meshonly.py` | Rebuilds the primitive blob head |
+| Write Steam `pak01_*` / `game\core` | Forbidden |
+| Orphan `pak08` / `pak69` / `pak90` in `addons` | Skin sticks after DMM disable |
+| DMM on `*.bak_*` | Not a `.vpk` |
+| VRF 10.x `Resource.Serialize` on these models | That library cannot even read `MVTX` |
 
-### Animation
+Mesh donor path that *is* valid (placement only, then splice):
 
-| Issue | Lesson |
-|-------|--------|
-| Isolation B “bind worked” | Meant **skinned bind pose**, not locomotion |
-| AnimInclude → `abrams_backup.vmdl` only | Not enough without a running AG2 graph on the model |
-| GameData / RERL AG2 strings | Not sufficient to make the pawn run the graph |
-| `bin_cs2` + AnimGraph2List | Cannot allocate class — cannot emit stock anim hooks |
+1. Bake the imported GLB **armature-deformed** before cutting (raw GLB verts are the wrong pose).
+2. Cut head/glasses with **token** bone names, weight ≥ 0.40.
+3. Seat at face center `(0, 3.361, 103)` inches, scale to stock face height 20.69 in, 100% `head`.
+4. Parent with `matrix_parent_inverse`. Export FBX **with armature** (`add_leaf_bones=False`, `use_armature_deform_only=True`, axes `-Z`/`Y`, `apply_unit_scale=True`, `FBX_SCALE_UNITS`).
+5. `make_clean_vmdl.py B --scale 1.0` then `compile_and_pack.ps1` **only** to refresh the donor `vmdl_c`. Then splice again.
 
 ---
 
@@ -170,55 +157,47 @@ All **failed** (still a statue):
 
 | Path | Role |
 |------|------|
-| `CHECKPOINT.md` | Short resume for the next coding session |
-| `model_work/import_head/sully.glb` | User-provided Sully mesh (local only) |
-| `model_work/build_import_head.py` | Cut/seat imported head → `sully_cut.blend` |
-| `model_work/export_sully_skinned.py` | Skinned FBX export (working mesh path) |
+| `tools/SpliceHost/splice.py` | **The working ship tool** |
+| `model_work/abrams_backup.vmdl_c` | Stock host (do not overwrite) |
+| `model_work/abrams_spliced.vmdl_c` | Last splice output |
+| CSDK `.../sully_abrams/.../abrams.vmdl_c` | Isolation B **donor only** |
+| `model_work/build_import_head.py` | Cut/seat imported head |
+| `model_work/export_sully_skinned.py` | Skinned FBX export |
 | `model_work/sully_export/sully_face.fbx` | Donor head FBX |
-| `model_work/sully_export/abrams_body_nohead.fbx` | Donor body FBX (no head/glasses) |
-| `model_work/abrams_backup.vmdl_c` | **Stock host** for next splice |
-| `tools/Reduced_CSDK_12/.../abrams.vmdl_c` | Isolation B compile — **mesh donor only** |
-| `release/pak69_dir.vpk` | Current Isolation B ship (good head, statue) |
-| `release/pak69_aug12_dir.vpk` | Primitive-head A/B (also statue) |
-| `sully_textures/` | Color maps + portraits packed into VPK |
-| `in-game-screen/screenshot_aug-latest.png` | Imported head in-match (statue) |
-| `in-game-screen/screenshot_working_bind.png` | Aug 12 “bind” shot (gun already on floor) |
+| `model_work/sully_export/abrams_body_nohead.fbx` | Donor body FBX (no glasses) |
+| `sully_textures/` | Color maps + portraits |
+| `release/pak69_stockhost_dir.vpk` | Current addon |
+| `release/pak69_dir.vpk` | Isolation B statue rollback |
+| `model_work/import_head/sully.glb` | Local mesh only |
+| `in-game-screen/screenshot_aug-latest.png` | Imported head, statue era |
+| `model_work/sully_export/spliced_stockhost_preview.png` | Spliced bind-pose preview |
 
-Blender scenes (~800 MB) are **not** in git. Restore from GitHub Release `snapshot-pre-import-head` if needed:
-
-- `sully_cut.blend` / `sully_skinned.blend`
-- `.bak_pre_import` variants (primitive head era)
+Blender scenes (~800 MB) are not in git. Restore `sully_cut.blend` / `sully_skinned.blend` from GitHub Release `snapshot-pre-import-head` if needed.
 
 ---
 
-## Tools (local, not all in git)
+## Tools (local)
 
-- Blender 4.5 under `tools/blender-install/`
-- Reduced CSDK 12 under `tools/Reduced_CSDK_12/` (mesh compile only going forward)
-- Source2Viewer CLI: `tools/s2v-cli/Source2Viewer-CLI.exe`
-- VPK packer: `tools/VtexPacker/`
+- Blender 4.5 — `tools/blender-install/`
+- Reduced CSDK 12 — `tools/Reduced_CSDK_12/` (donor mesh compile only)
+- Source2Viewer CLI — `tools/s2v-cli/Source2Viewer-CLI.exe`
+- VPK packer — `tools/VtexPacker/`
+- Python `keyvalues3` — KV3 read/write for CTRL + DATA
 
 ---
 
-## Install notes (for testing)
+## Install
 
-1. Deadlock Mod Manager: install **one** `*_dir.vpk` only.
+1. Deadlock Mod Manager: **one** `*_dir.vpk` only — `pak69_stockhost_dir.vpk`.
 2. Full game restart (not just disconnect).
-3. If skins stick after disable, clear orphan `pak##` from `game/citadel/addons` into `disabled_vpks\`.
+3. If an old skin sticks after disable, move leftover `pak##` from `game/citadel/addons` to `disabled_vpks\`.
 
 ---
 
-## For the next LLM
+## For the next session
 
-1. Read **this file** then **`CHECKPOINT.md`**.
-2. Do **not** restart Isolation B recompiles to fix walk.
-3. Implement **stock-host mesh splice** (face + recommended cut body).
-4. Preserve stock AG2 / vnmskel on the host `vmdl_c`.
-5. Do not put `sully.glb` in the public zip.
-6. Verify in-match walk before calling it done.
-
-### Open problem (one line)
-
-**How do we replace Abrams’ head (and no-glasses body) while keeping the stock compiled model’s AnimGraph2/NmSkeleton locomotion intact, given `bin_cs2` cannot emit those nodes?**
-
-Agreed answer to try: **don’t recompile the hero graph — splice meshes into stock `abrams.vmdl_c`.**
+1. Read this file. Do not recompile Isolation B to change locomotion.
+2. If the mesh needs a visual fix: edit the blend / FBX, rebuild the donor compile, run `splice.py`, pack.
+3. If locomotion breaks after a splice: compare `abrams_spliced.vmdl_c` to `abrams_backup.vmdl_c` (ANIM size, RERL, `m_animGraph2Refs`). Restore the host and splice again. Do not invent a third compile path.
+4. Keep HUD portraits as they are.
+5. Keep `sully.glb` off GameBanana.

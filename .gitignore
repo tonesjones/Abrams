@@ -24,3 +24,21 @@
 /disabled_vpks/
 /extracted/pak68_dir.vpk
 /coatless_abrams_feb_26.zip
+
+# Build / cache
+__pycache__/
+*.pyc
+
+# Failed C# VRF experiments (working splice is Python)
+/tools/SpliceHost/bin/
+/tools/SpliceHost/obj/
+/tools/PatchAnimRefs/
+
+# Regenerable Source2Viewer dumps of the spliced host
+/model_work/abrams_spliced.bin
+/model_work/abrams_spliced.gltf
+/model_work/abrams_spliced_physics.bin
+/model_work/abrams_spliced_physics.gltf
+
+# Primitive-head Blender backups (~800 MB each)
+*.bak_pre_import
