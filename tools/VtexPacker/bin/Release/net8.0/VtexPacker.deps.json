@@ -1,0 +1,59 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "VtexPacker/1.0.0": {
+        "dependencies": {
+          "ValvePak": "3.0.3.132"
+        },
+        "runtime": {
+          "VtexPacker.dll": {}
+        }
+      },
+      "System.IO.Hashing/8.0.0": {
+        "runtime": {
+          "lib/net8.0/System.IO.Hashing.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
+      "ValvePak/3.0.3.132": {
+        "dependencies": {
+          "System.IO.Hashing": "8.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/ValvePak.dll": {
+            "assemblyVersion": "3.0.3.0",
+            "fileVersion": "3.0.3.132"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "VtexPacker/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.IO.Hashing/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ne1843evDugl0md7Fjzy6QjJrzsjh46ZKbhf8GwBXb5f/gw97J4bxMs0NQKifDuThh/f0bZ0e62NPl1jzTuRqA==",
+      "path": "system.io.hashing/8.0.0",
+      "hashPath": "system.io.hashing.8.0.0.nupkg.sha512"
+    },
+    "ValvePak/3.0.3.132": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0XUU/G7vZHgMVR9kZ1IdfeazFJ37ipZJhT+1/G6hrN/5R9uIZBE43ZmpskZQD7uyEEg2qjz6Pi94fy/35MfJFA==",
+      "path": "valvepak/3.0.3.132",
+      "hashPath": "valvepak.3.0.3.132.nupkg.sha512"
+    }
+  }
+}

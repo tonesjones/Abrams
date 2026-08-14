@@ -1,0 +1,26 @@
+# Reinstallable third-party (CSDK, Blender, compiler copies) — multi-GB
+/tools/Reduced_CSDK_12/
+/tools/Reduced_CSDK_12.zip
+/tools/blender-install/
+/tools/compiler_gamebin/
+/tools/compiler_live/
+/tools/compiler_noparticles/
+/tools/compiler_sandbox/
+/tools/s2v-cli/
+/tools/Source2Viewer.exe
+/tools/cli-windows-x64.zip
+/tools/_dll_bak/
+
+# 800MB Blender scenes: attached to the GitHub Release, not regular git
+*.blend
+*.blend1
+
+# Oversize stock extracts (rebuild with Source2Viewer)
+/model_work/abrams_export/models/heroes_wip/abrams/abrams.gltf
+/model_work/abrams_export/models/heroes_wip/abrams/abrams.bin
+/model_work/vmdl_src/
+
+# Leftover / disabled paks
+/disabled_vpks/
+/extracted/pak68_dir.vpk
+/coatless_abrams_feb_26.zip

@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "dgSpecHash": "ViGITKt21uw=",
+  "success": true,
+  "projectFilePath": "C:\\TestCode\\Abrams\\tools\\VtexPacker\\VtexPacker.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Owner\\.nuget\\packages\\system.io.hashing\\8.0.0\\system.io.hashing.8.0.0.nupkg.sha512",
+    "C:\\Users\\Owner\\.nuget\\packages\\valvepak\\3.0.3.132\\valvepak.3.0.3.132.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "VtexPacker depends on ValvePak (>= 3.0.3) but ValvePak 3.0.3 was not found. An approximate best match of ValvePak 3.0.3.132 was resolved.",
+      "libraryId": "ValvePak",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
+}
