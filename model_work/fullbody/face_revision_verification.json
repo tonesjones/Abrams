@@ -1,0 +1,8 @@
+{
+  "rig_identical": true,
+  "original_skin_weights_identical": true,
+  "body_vertices_outside_head_checked": 3483,
+  "maximum_outside_head_movement_m": 0.0,
+  "new_fur_vertices": 29544,
+  "new_fur_binding": "head: 1.0"
+}

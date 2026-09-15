@@ -1,0 +1,39 @@
+Extensions: writing cache failed ([WinError 183] Cannot create a file when that file already exists: 'C:\\Users\\Owner\\AppData\\Roaming\\Blender Foundation\\Blender\\4.5\\extensions\\.cache').
+10:01:58 | INFO: Data are loaded, start creating Blender stuff
+10:01:58 | INFO: Blender create Mesh node C:\TestCode\Abrams\model_work\fullbody\stock\models\heroes_wip\abrams\abrams.vmdl_c.abrams_model
+10:01:59 | INFO: Blender create Mesh node C:\TestCode\Abrams\model_work\fullbody\stock\models\heroes_wip\abrams\abrams.vmdl_c.abrams_face_model
+10:01:59 | INFO: Blender create Mesh node C:\TestCode\Abrams\model_work\fullbody\stock\models\heroes_wip\abrams\abrams.vmdl_c.gun_model
+10:01:59 | INFO: Blender create Mesh node C:\TestCode\Abrams\model_work\fullbody\stock\models\heroes_wip\abrams\abrams.vmdl_c.book_model
+10:02:00 | INFO: glTF import finished in 2.17s
+10:02:00 | INFO: Data are loaded, start creating Blender stuff
+10:02:00 | INFO: Blender create Mesh node Sully_lod0_sully_mat.002_0
+10:02:00 | INFO: Blender create Mesh node Sully_lod0_sully_eyes.002_0
+10:02:00 | INFO: glTF import finished in 0.04s
+Blender 4.5.10 LTS (hash 6dc0b208d1b5 built 2026-05-19 01:33:42)
+Fra:1 Mem:177.03M (Peak 191.22M) | Time:00:14.15 | Rendering 1 / 64 samples
+Fra:1 Mem:177.03M (Peak 191.22M) | Time:00:14.31 | Rendering 25 / 64 samples
+Fra:1 Mem:177.03M (Peak 191.22M) | Time:00:14.33 | Rendering 50 / 64 samples
+Fra:1 Mem:177.03M (Peak 191.22M) | Time:00:14.34 | Rendering 64 / 64 samples
+Saved: 'C:\TestCode\Abrams\model_work\fullbody\preview_front.png'
+Time: 00:14.48 (Saving: 00:00.11)
+
+Fra:1 Mem:177.02M (Peak 181.86M) | Time:00:00.09 | Rendering 1 / 64 samples
+Fra:1 Mem:177.02M (Peak 181.86M) | Time:00:00.11 | Rendering 25 / 64 samples
+Fra:1 Mem:177.02M (Peak 181.86M) | Time:00:00.14 | Rendering 50 / 64 samples
+Fra:1 Mem:177.02M (Peak 181.86M) | Time:00:00.16 | Rendering 64 / 64 samples
+Saved: 'C:\TestCode\Abrams\model_work\fullbody\preview_side.png'
+Time: 00:00.21 (Saving: 00:00.04)
+
+Added face-only skinned fur strands: 10791
+Info: Saved as "sulley_fullbody.blend"
+
+FBX export starting... 'C:\\TestCode\\Abrams\\tools\\Reduced_CSDK_12\\content\\citadel_addons\\sulley_fullbody\\models\\heroes_wip\\abrams\\sulley_body.fbx'
+(bpy.data.armatures['Armature'], 'POSE')
+export finished in 0.1777 sec.
+
+FBX export starting... 'C:\\TestCode\\Abrams\\tools\\Reduced_CSDK_12\\content\\citadel_addons\\sulley_fullbody\\models\\heroes_wip\\abrams\\sulley_face.fbx'
+(bpy.data.armatures['Armature'], 'POSE')
+export finished in 0.0974 sec.
+FULLBODY BUILD COMPLETE [{'mesh': 'body', 'vertices': 48956, 'bones': 46, 'min_m': [-1.0362011194229126, -0.23606935143470764, 0.015008652582764626], 'max_m': [1.0362040996551514, 0.9101458787918091, 2.9276883602142334]}, {'mesh': 'face', 'vertices': 292, 'bones': 1, 'min_m': [-0.10232864320278168, -0.10410965234041214, 2.7445380687713623], 'max_m': [0.10232540965080261, 0.00016034021973609924, 2.848806619644165]}]
+
+Blender quit

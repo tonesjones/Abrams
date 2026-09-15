@@ -1,6 +1,6 @@
 # Abrams → Sully (Deadlock model mod)
 
-Private engineering repo for a local *Deadlock* Abrams skin: teal fur, purple spots, imported Sully head, stock locomotion.
+Private engineering repo for a local *Deadlock* Abrams skin: teal fur, purple spots, Sully head, stock locomotion.
 
 **This README is the method record.** If you are about to “try a new compile path” or patch AnimGraph2 strings into an Isolation B model, stop. That already failed. The working approach is **stock-host mesh splice**.
 
@@ -8,22 +8,29 @@ Short operational resume: `CHECKPOINT.md`.
 Public GameBanana notes (texture-era zip only): `release/README.md`.  
 Do **not** put `model_work/import_head/sully.glb` in any public zip.
 
+The current working branch contains the full-body stock-host implementation and
+the later donor-head/visual-gating experiments. The latest donor-head package was
+compiled and offline-verified but was not installed; the user rejected its in-game
+appearance. The next valid face change must pass a Blender preview gate before any
+compile or VPK work. Historical head-swap exports and test packages were retired
+on 2026-09-15 after their findings were captured in `CHECKPOINT.md`.
+
 Stock Deadlock `pak01_*` / `game\core` are never modified. Addon VPK only.
 
 ---
 
-## Current ship
+## Current verified foundation
 
 | Item | Status |
 |------|--------|
-| Install | `release/pak69_stockhost_dir.vpk` |
-| Head | Imported Sully, 2577 verts, 100% `head`, on the neck |
-| Body | Isolation B cut body (teal + spots, **no glasses**) |
-| HUD portraits | Done — leave alone |
+| Install | No current face package is approved; use the accepted baseline only for rollback/reference |
+| Head/body | Full-body Sulley foundation is preserved under `release/fullbody/accepted_baseline/` |
+| HUD portraits | Five previously working Sulley portraits retained |
 | Locomotion | Stock ANIM + AG2 + `vnmskel` kept on the host (300 sequences). User signed off on this splice. |
 | Gun / book | Stock meshes left on the host |
 
-Rollback of the addon returns pak01 Abrams. The previous statue pack is `release/pak69_dir.vpk`.
+Rollback of the addon returns pak01 Abrams. Current candidate and preview status are
+recorded in `CHECKPOINT.md`.
 
 ---
 
@@ -160,17 +167,13 @@ Mesh donor path that *is* valid (placement only, then splice):
 | `tools/SpliceHost/splice.py` | **The working ship tool** |
 | `model_work/abrams_backup.vmdl_c` | Stock host (do not overwrite) |
 | `model_work/abrams_spliced.vmdl_c` | Last splice output |
-| CSDK `.../sully_abrams/.../abrams.vmdl_c` | Isolation B **donor only** |
-| `model_work/build_import_head.py` | Cut/seat imported head |
-| `model_work/export_sully_skinned.py` | Skinned FBX export |
-| `model_work/sully_export/sully_face.fbx` | Donor head FBX |
-| `model_work/sully_export/abrams_body_nohead.fbx` | Donor body FBX (no glasses) |
-| `sully_textures/` | Color maps + portraits |
-| `release/pak69_stockhost_dir.vpk` | Current addon |
-| `release/pak69_dir.vpk` | Isolation B statue rollback |
+| `model_work/fullbody/` | Current reproducible full-body source, stock snapshot, checks and previews |
+| `model_work/head_donor/` | Latest donor-head experiment and offline reports |
+| `model_work/untouched_head_preview/` | Approval-only visual gate; no package/install |
+| `model_work/import_head/` | Source GLB and source textures |
+| `release/fullbody/accepted_baseline/` | Accepted rollback VPK and manifest |
+| `release/fullbody/pak69_sulley_head_donor_v3_dir.vpk` | Latest unapproved candidate |
 | `model_work/import_head/sully.glb` | Local mesh only |
-| `in-game-screen/screenshot_aug-latest.png` | Imported head, statue era |
-| `model_work/sully_export/spliced_stockhost_preview.png` | Spliced bind-pose preview |
 
 Blender scenes (~800 MB) are not in git. Restore `sully_cut.blend` / `sully_skinned.blend` from GitHub Release `snapshot-pre-import-head` if needed.
 
@@ -196,8 +199,16 @@ Blender scenes (~800 MB) are not in git. Restore `sully_cut.blend` / `sully_skin
 
 ## For the next session
 
-1. Read this file. Do not recompile Isolation B to change locomotion.
-2. If the mesh needs a visual fix: edit the blend / FBX, rebuild the donor compile, run `splice.py`, pack.
-3. If locomotion breaks after a splice: compare `abrams_spliced.vmdl_c` to `abrams_backup.vmdl_c` (ANIM size, RERL, `m_animGraph2Refs`). Restore the host and splice again. Do not invent a third compile path.
-4. Keep HUD portraits as they are.
-5. Keep `sully.glb` off GameBanana.
+1. Read `CHECKPOINT.md` and inspect the candidate source in Blender.
+2. Require an approved front/three-quarter/full-body preview before compiling.
+3. Preserve the stock host's animation, skeleton, camera and attachments.
+4. Keep the five working HUD portraits unchanged.
+5. Keep source GLBs and private assets out of any public package.
+
+## Retired local artifacts
+
+The first head-swap pipeline and its intermediate exports were removed after the
+stock-host splice and later full-body pipeline superseded them. The deleted paths
+were `model_work/sully_export/`, `model_work/abrams_export/`,
+`model_work/vmdl_src/`, and the old CSDK `sully_abrams` addon workspace. Their
+failure modes and conclusions remain documented above and in `CHECKPOINT.md`.

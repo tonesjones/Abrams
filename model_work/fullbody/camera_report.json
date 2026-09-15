@@ -1,0 +1,391 @@
+{
+  "status": "OFFLINE_HYPOTHESIS_ONLY",
+  "assumptions": [
+    "Stored camera offsets are honored in-game.",
+    "Camera right is Blender +X; camera forward is Blender -Y.",
+    "No world collision, camera smoothing, or gameplay aim-layer blending."
+  ],
+  "samples": [
+    {
+      "clip": "primary_stand_idle",
+      "frame_fraction": 0,
+      "mode": "normal",
+      "rays": [
+        {
+          "pitch": -45,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 0,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 45,
+          "center_ray_hits_body": false
+        }
+      ]
+    },
+    {
+      "clip": "primary_stand_idle",
+      "frame_fraction": 0,
+      "mode": "aim_distance",
+      "rays": [
+        {
+          "pitch": -45,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 0,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 45,
+          "center_ray_hits_body": false
+        }
+      ]
+    },
+    {
+      "clip": "primary_stand_idle",
+      "frame_fraction": 0.25,
+      "mode": "normal",
+      "rays": [
+        {
+          "pitch": -45,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 0,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 45,
+          "center_ray_hits_body": false
+        }
+      ]
+    },
+    {
+      "clip": "primary_stand_idle",
+      "frame_fraction": 0.25,
+      "mode": "aim_distance",
+      "rays": [
+        {
+          "pitch": -45,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 0,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 45,
+          "center_ray_hits_body": false
+        }
+      ]
+    },
+    {
+      "clip": "primary_stand_idle",
+      "frame_fraction": 0.5,
+      "mode": "normal",
+      "rays": [
+        {
+          "pitch": -45,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 0,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 45,
+          "center_ray_hits_body": false
+        }
+      ]
+    },
+    {
+      "clip": "primary_stand_idle",
+      "frame_fraction": 0.5,
+      "mode": "aim_distance",
+      "rays": [
+        {
+          "pitch": -45,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 0,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 45,
+          "center_ray_hits_body": false
+        }
+      ]
+    },
+    {
+      "clip": "primary_stand_idle",
+      "frame_fraction": 0.75,
+      "mode": "normal",
+      "rays": [
+        {
+          "pitch": -45,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 0,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 45,
+          "center_ray_hits_body": false
+        }
+      ]
+    },
+    {
+      "clip": "primary_stand_idle",
+      "frame_fraction": 0.75,
+      "mode": "aim_distance",
+      "rays": [
+        {
+          "pitch": -45,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 0,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 45,
+          "center_ray_hits_body": false
+        }
+      ]
+    },
+    {
+      "clip": "primary_stand_idle",
+      "frame_fraction": 1,
+      "mode": "normal",
+      "rays": [
+        {
+          "pitch": -45,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 0,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 45,
+          "center_ray_hits_body": false
+        }
+      ]
+    },
+    {
+      "clip": "primary_stand_idle",
+      "frame_fraction": 1,
+      "mode": "aim_distance",
+      "rays": [
+        {
+          "pitch": -45,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 0,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 45,
+          "center_ray_hits_body": false
+        }
+      ]
+    },
+    {
+      "clip": "primary_run_n",
+      "frame_fraction": 0,
+      "mode": "normal",
+      "rays": [
+        {
+          "pitch": -45,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 0,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 45,
+          "center_ray_hits_body": false
+        }
+      ]
+    },
+    {
+      "clip": "primary_run_n",
+      "frame_fraction": 0,
+      "mode": "aim_distance",
+      "rays": [
+        {
+          "pitch": -45,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 0,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 45,
+          "center_ray_hits_body": false
+        }
+      ]
+    },
+    {
+      "clip": "primary_run_n",
+      "frame_fraction": 0.25,
+      "mode": "normal",
+      "rays": [
+        {
+          "pitch": -45,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 0,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 45,
+          "center_ray_hits_body": false
+        }
+      ]
+    },
+    {
+      "clip": "primary_run_n",
+      "frame_fraction": 0.25,
+      "mode": "aim_distance",
+      "rays": [
+        {
+          "pitch": -45,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 0,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 45,
+          "center_ray_hits_body": false
+        }
+      ]
+    },
+    {
+      "clip": "primary_run_n",
+      "frame_fraction": 0.5,
+      "mode": "normal",
+      "rays": [
+        {
+          "pitch": -45,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 0,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 45,
+          "center_ray_hits_body": false
+        }
+      ]
+    },
+    {
+      "clip": "primary_run_n",
+      "frame_fraction": 0.5,
+      "mode": "aim_distance",
+      "rays": [
+        {
+          "pitch": -45,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 0,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 45,
+          "center_ray_hits_body": false
+        }
+      ]
+    },
+    {
+      "clip": "primary_run_n",
+      "frame_fraction": 0.75,
+      "mode": "normal",
+      "rays": [
+        {
+          "pitch": -45,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 0,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 45,
+          "center_ray_hits_body": false
+        }
+      ]
+    },
+    {
+      "clip": "primary_run_n",
+      "frame_fraction": 0.75,
+      "mode": "aim_distance",
+      "rays": [
+        {
+          "pitch": -45,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 0,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 45,
+          "center_ray_hits_body": false
+        }
+      ]
+    },
+    {
+      "clip": "primary_run_n",
+      "frame_fraction": 1,
+      "mode": "normal",
+      "rays": [
+        {
+          "pitch": -45,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 0,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 45,
+          "center_ray_hits_body": false
+        }
+      ]
+    },
+    {
+      "clip": "primary_run_n",
+      "frame_fraction": 1,
+      "mode": "aim_distance",
+      "rays": [
+        {
+          "pitch": -45,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 0,
+          "center_ray_hits_body": false
+        },
+        {
+          "pitch": 45,
+          "center_ray_hits_body": false
+        }
+      ]
+    }
+  ],
+  "all_center_rays_clear": true
+}

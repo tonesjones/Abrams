@@ -1,0 +1,1768 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vmdlkeys4:version{9f5c1002-f19f-470c-bd42-c3c26c063d33} -->
+{
+	ikdata = 
+	{
+		m_IKChains = 
+		[
+			{
+				m_Name = "r_hand_weapon_lock"
+				m_Joints = 
+				[
+					{
+						m_Bone = 
+						{
+							m_Name = "arm_upper_R"
+						}
+						m_JointConstraintData = [  ]
+						m_qFixupRotation = [ 0.0, 0.0, 0.0, 1.0 ]
+					},
+					{
+						m_Bone = 
+						{
+							m_Name = "arm_lower_R"
+						}
+						m_JointConstraintData = [  ]
+						m_qFixupRotation = [ 0.0, 0.0, 0.0, 1.0 ]
+					},
+					{
+						m_Bone = 
+						{
+							m_Name = "hand_R"
+						}
+						m_JointConstraintData = [  ]
+						m_qFixupRotation = [ 0.0, 0.0, 0.0, 1.0 ]
+					},
+				]
+				m_EndEffectorFixedOffsetAttachment = 
+				{
+					m_Name = ""
+				}
+				m_ParentJoint = 
+				{
+					m_Bone = 
+					{
+						m_Name = ""
+					}
+					m_JointConstraintData = [  ]
+					m_qFixupRotation = [ 0.0, 0.0, 0.0, 1.0 ]
+				}
+				m_bDoBonesOrientAlongPositiveX = true
+				m_DefaultSolverSettings = 
+				{
+					m_SolverType = "IKSOLVER_TwoBone"
+					m_nNumIterations = 6
+					m_EndEffectorRotationFixUpMode = "None"
+				}
+				m_DefaultTargetSettings = 
+				{
+					m_TargetSource = "Bone"
+					m_Bone = 
+					{
+						m_Name = "hand_R_IK_target"
+					}
+					m_AnimgraphParameterNamePosition = 
+					{
+						m_id = 4294967295
+					}
+					m_AnimgraphParameterNameOrientation = 
+					{
+						m_id = 4294967295
+					}
+					m_TargetCoordSystem = "World Space"
+				}
+				m_bParentJointRequiresAlignment = true
+				m_PoleVectorForAxis = "IKChainDataPoleVectorForAxis::Y"
+				m_bUseNewPoleVectorForAxis = false
+			},
+			{
+				m_Name = "arm_R"
+				m_Joints = 
+				[
+					{
+						m_Bone = 
+						{
+							m_Name = "arm_upper_R"
+						}
+						m_JointConstraintData = [  ]
+						m_qFixupRotation = [ 0.0, 0.0, 0.0, 1.0 ]
+					},
+					{
+						m_Bone = 
+						{
+							m_Name = "arm_lower_R"
+						}
+						m_JointConstraintData = [  ]
+						m_qFixupRotation = [ 0.0, 0.0, 0.0, 1.0 ]
+					},
+					{
+						m_Bone = 
+						{
+							m_Name = "hand_R"
+						}
+						m_JointConstraintData = [  ]
+						m_qFixupRotation = [ 0.0, 0.0, 0.0, 1.0 ]
+					},
+				]
+				m_EndEffectorFixedOffsetAttachment = 
+				{
+					m_Name = ""
+				}
+				m_ParentJoint = 
+				{
+					m_Bone = 
+					{
+						m_Name = ""
+					}
+					m_JointConstraintData = [  ]
+					m_qFixupRotation = [ 0.0, 0.0, 0.0, 1.0 ]
+				}
+				m_bDoBonesOrientAlongPositiveX = true
+				m_DefaultSolverSettings = 
+				{
+					m_SolverType = "IKSOLVER_TwoBone"
+					m_nNumIterations = 6
+					m_EndEffectorRotationFixUpMode = "None"
+				}
+				m_DefaultTargetSettings = 
+				{
+					m_TargetSource = "Bone"
+					m_Bone = 
+					{
+						m_Name = "hand_R_IK_target"
+					}
+					m_AnimgraphParameterNamePosition = 
+					{
+						m_id = 4294967295
+					}
+					m_AnimgraphParameterNameOrientation = 
+					{
+						m_id = 4294967295
+					}
+					m_TargetCoordSystem = "World Space"
+				}
+				m_bParentJointRequiresAlignment = true
+				m_PoleVectorForAxis = "IKChainDataPoleVectorForAxis::Y"
+				m_bUseNewPoleVectorForAxis = false
+			},
+			{
+				m_Name = "arm_L"
+				m_Joints = 
+				[
+					{
+						m_Bone = 
+						{
+							m_Name = "arm_upper_L"
+						}
+						m_JointConstraintData = [  ]
+						m_qFixupRotation = [ 0.0, 0.0, 0.0, 1.0 ]
+					},
+					{
+						m_Bone = 
+						{
+							m_Name = "arm_lower_L"
+						}
+						m_JointConstraintData = [  ]
+						m_qFixupRotation = [ 0.0, 0.0, 0.0, 1.0 ]
+					},
+					{
+						m_Bone = 
+						{
+							m_Name = "hand_L"
+						}
+						m_JointConstraintData = [  ]
+						m_qFixupRotation = [ 0.0, 0.0, 0.0, 1.0 ]
+					},
+				]
+				m_EndEffectorFixedOffsetAttachment = 
+				{
+					m_Name = ""
+				}
+				m_ParentJoint = 
+				{
+					m_Bone = 
+					{
+						m_Name = ""
+					}
+					m_JointConstraintData = [  ]
+					m_qFixupRotation = [ 0.0, 0.0, 0.0, 1.0 ]
+				}
+				m_bDoBonesOrientAlongPositiveX = true
+				m_DefaultSolverSettings = 
+				{
+					m_SolverType = "IKSOLVER_TwoBone"
+					m_nNumIterations = 6
+					m_EndEffectorRotationFixUpMode = "None"
+				}
+				m_DefaultTargetSettings = 
+				{
+					m_TargetSource = "Bone"
+					m_Bone = 
+					{
+						m_Name = "weaponHier_L_IKTARGET"
+					}
+					m_AnimgraphParameterNamePosition = 
+					{
+						m_id = 4294967295
+					}
+					m_AnimgraphParameterNameOrientation = 
+					{
+						m_id = 4294967295
+					}
+					m_TargetCoordSystem = "World Space"
+				}
+				m_bParentJointRequiresAlignment = true
+				m_PoleVectorForAxis = "IKChainDataPoleVectorForAxis::Y"
+				m_bUseNewPoleVectorForAxis = false
+			},
+			{
+				m_Name = "Leg_L"
+				m_Joints = 
+				[
+					{
+						m_Bone = 
+						{
+							m_Name = "leg_upper_L"
+						}
+						m_JointConstraintData = [  ]
+						m_qFixupRotation = [ 0.0, 0.0, 0.0, 1.0 ]
+					},
+					{
+						m_Bone = 
+						{
+							m_Name = "leg_lower_L"
+						}
+						m_JointConstraintData = [  ]
+						m_qFixupRotation = [ 0.0, 0.0, 0.0, 1.0 ]
+					},
+					{
+						m_Bone = 
+						{
+							m_Name = "ankle_L"
+						}
+						m_JointConstraintData = [  ]
+						m_qFixupRotation = [ 0.0, 0.0, 0.0, 1.0 ]
+					},
+				]
+				m_EndEffectorFixedOffsetAttachment = 
+				{
+					m_Name = ""
+				}
+				m_ParentJoint = 
+				{
+					m_Bone = 
+					{
+						m_Name = ""
+					}
+					m_JointConstraintData = [  ]
+					m_qFixupRotation = [ 0.0, 0.0, 0.0, 1.0 ]
+				}
+				m_bDoBonesOrientAlongPositiveX = true
+				m_DefaultSolverSettings = 
+				{
+					m_SolverType = "IKSOLVER_TwoBone"
+					m_nNumIterations = 6
+					m_EndEffectorRotationFixUpMode = "None"
+				}
+				m_DefaultTargetSettings = 
+				{
+					m_TargetSource = "Bone"
+					m_Bone = 
+					{
+						m_Name = "ankle_L"
+					}
+					m_AnimgraphParameterNamePosition = 
+					{
+						m_id = 4294967295
+					}
+					m_AnimgraphParameterNameOrientation = 
+					{
+						m_id = 4294967295
+					}
+					m_TargetCoordSystem = "World Space"
+				}
+				m_bParentJointRequiresAlignment = true
+				m_PoleVectorForAxis = "IKChainDataPoleVectorForAxis::Y"
+				m_bUseNewPoleVectorForAxis = false
+			},
+			{
+				m_Name = "Leg_R"
+				m_Joints = 
+				[
+					{
+						m_Bone = 
+						{
+							m_Name = "leg_upper_R"
+						}
+						m_JointConstraintData = [  ]
+						m_qFixupRotation = [ 0.0, 0.0, 0.0, 1.0 ]
+					},
+					{
+						m_Bone = 
+						{
+							m_Name = "leg_lower_R"
+						}
+						m_JointConstraintData = [  ]
+						m_qFixupRotation = [ 0.0, 0.0, 0.0, 1.0 ]
+					},
+					{
+						m_Bone = 
+						{
+							m_Name = "ankle_R"
+						}
+						m_JointConstraintData = [  ]
+						m_qFixupRotation = [ 0.0, 0.0, 0.0, 1.0 ]
+					},
+				]
+				m_EndEffectorFixedOffsetAttachment = 
+				{
+					m_Name = ""
+				}
+				m_ParentJoint = 
+				{
+					m_Bone = 
+					{
+						m_Name = ""
+					}
+					m_JointConstraintData = [  ]
+					m_qFixupRotation = [ 0.0, 0.0, 0.0, 1.0 ]
+				}
+				m_bDoBonesOrientAlongPositiveX = true
+				m_DefaultSolverSettings = 
+				{
+					m_SolverType = "IKSOLVER_TwoBone"
+					m_nNumIterations = 6
+					m_EndEffectorRotationFixUpMode = "None"
+				}
+				m_DefaultTargetSettings = 
+				{
+					m_TargetSource = "Bone"
+					m_Bone = 
+					{
+						m_Name = "ankle_R"
+					}
+					m_AnimgraphParameterNamePosition = 
+					{
+						m_id = 4294967295
+					}
+					m_AnimgraphParameterNameOrientation = 
+					{
+						m_id = 4294967295
+					}
+					m_TargetCoordSystem = "World Space"
+				}
+				m_bParentJointRequiresAlignment = true
+				m_PoleVectorForAxis = "IKChainDataPoleVectorForAxis::Y"
+				m_bUseNewPoleVectorForAxis = false
+			},
+		]
+	}
+	CCitadelHeroModelGameData_t = 
+	{
+		m_UIAnimGraph = resource:""
+		m_UIShopAnimGraph = resource:""
+		m_hAmbientParticle = resource_name:""
+		m_vecAmbientParticleSettings = [  ]
+		m_flTurnThreshold = 90.0
+		m_flTurnDuration = 0.5
+	}
+	CitadelCameraSettings_t = 
+	{
+		m_flCameraSideOffset = -44.0
+		m_flCameraBackOffset = 111.0
+		m_flCameraBackOffsetAiming = 75.0
+		m_flCameraHeightStanding = 100.0
+		m_flCameraHeightCrouching = 70.0
+		m_flCameraSideOffsetZiplining = 0.0
+		m_flCameraHeightOffsetZiplining = 0.0
+		m_vCameraParrotOffset = [ -10.0, -10.0, 10.0 ]
+	}
+	CitadelModelParticleSettings_t = 
+	{
+		m_flScale = 1.0
+	}
+	CitadelTaggedSoundSettings_t = 
+	{
+		m_taggedSounds = 
+		[
+			resource:"scripts/tagged_sounds/abrams_anim_sounds.vdata",
+		]
+	}
+	CitadelUnitStatusSettings_t = 
+	{
+		m_vUnitStatusOffset = [ 0.0, 0.0, 105.0 ]
+		m_vHealthbarOffset = [ 0.0, 0.0, 0.0 ]
+		m_vDamageNumbersOffset = [ -10.0, 25.0, 105.0 ]
+		m_vStatusEffectsOffset = [ 0.0, 0.0, 0.0 ]
+	}
+	particle_cfg_list = 
+	[
+		{
+			name = resource:"particles/abilities/abrams/abrams_ambient_book.vpcf"
+			config = "preview"
+		},
+	]
+	FeetSettings = 
+	{
+		foot_L = 
+		{
+			m_name = "foot_L"
+			m_ankleBoneName = "ankle_L"
+			m_toeBoneName = "ball_L"
+			m_vBallOffset = [ 0.0, 0.0, 0.0 ]
+			m_vHeelOffset = [ 0.0, 0.0, 0.0 ]
+			m_flFootLength = 0.0
+			m_flBindPoseDirectionMS = 0.0
+			m_flTraceHeight = 10.0
+			m_flTraceRadius = 4.0
+		}
+		foot_R = 
+		{
+			m_name = "foot_R"
+			m_ankleBoneName = "ankle_R"
+			m_toeBoneName = "ball_R"
+			m_vBallOffset = [ 0.0, 0.0, 0.0 ]
+			m_vHeelOffset = [ 0.0, 0.0, 0.0 ]
+			m_flFootLength = 0.0
+			m_flBindPoseDirectionMS = 0.0
+			m_flTraceHeight = 10.0
+			m_flTraceRadius = 4.0
+		}
+	}
+	MovementSettings = 
+	{
+		enable_crouch_speeds = false
+		standard_speeds = 
+		{
+			Slow = 
+			{
+				speed = 75.0
+				uses_range = false
+				stop_distance_range = 0.0
+				hop_distance_range = 0.0
+				start_distance = 0.0
+				min_turn_radius = 0.0
+				m_capabilities = ""
+			}
+		}
+		speeds = [  ]
+		maxSpringTension = 100.0
+		springConstant = 10.0
+		useSmoothPaths = true
+		sharpStartAngle = 180.0
+		minIdleTurnAngle = 10.0
+	}
+	LookAtList = 
+	{
+		neck_and_head = 
+		{
+			name = "neck_and_head"
+			bones = 
+			[
+				{
+					name = "neck_0"
+					weight = 0.66
+				},
+				{
+					name = "head"
+					weight = 1.0
+				},
+			]
+		}
+		shop_ui_lookat = 
+		{
+			name = "shop_ui_lookat"
+			bones = 
+			[
+				{
+					name = "spine_3"
+					weight = 0.51
+				},
+				{
+					name = "neck_0"
+					weight = 0.66
+				},
+				{
+					name = "head"
+					weight = 1.0
+				},
+				{
+					name = "spine_2"
+					weight = 0.27
+				},
+			]
+		}
+		UpperBodyLookAt = 
+		{
+			name = "UpperBodyLookAt"
+			bones = 
+			[
+				{
+					name = "spine_1"
+					weight = 1.0
+				},
+				{
+					name = "spine_2"
+					weight = 1.0
+				},
+				{
+					name = "spine_3"
+					weight = 1.0
+				},
+			]
+		}
+		WaistDownLookAt = 
+		{
+			name = "WaistDownLookAt"
+			bones = 
+			[
+				{
+					name = "spine_0"
+					weight = 1.0
+				},
+				{
+					name = "pelvis"
+					weight = 1.0
+				},
+			]
+		}
+		zipline_lookat = 
+		{
+			name = "zipline_lookat"
+			bones = 
+			[
+				{
+					name = "spine_2"
+					weight = 0.5
+				},
+				{
+					name = "spine_3"
+					weight = 0.5
+				},
+				{
+					name = "neck_0"
+					weight = 0.8
+				},
+				{
+					name = "head"
+					weight = 1.0
+				},
+			]
+		}
+	}
+	cloth_ground_plane = 
+	{
+		trace_raise = 65.0
+	}
+	AttachmentCameraData = 
+	[
+		{
+			camera_name = ""
+			attachment_name = "portrait_camera"
+			screen_width = 512
+			screen_height = 384
+			fov = 40
+		},
+		{
+			camera_name = ""
+			attachment_name = "near_00"
+			screen_width = 1920
+			screen_height = 1080
+			fov = 90
+		},
+		{
+			camera_name = ""
+			attachment_name = "near_01"
+			screen_width = 1920
+			screen_height = 1080
+			fov = 90
+		},
+		{
+			camera_name = ""
+			attachment_name = "near_02"
+			screen_width = 1920
+			screen_height = 1080
+			fov = 90
+		},
+		{
+			camera_name = ""
+			attachment_name = "far_00"
+			screen_width = 1920
+			screen_height = 1080
+			fov = 90
+		},
+		{
+			camera_name = ""
+			attachment_name = "far_01"
+			screen_width = 1920
+			screen_height = 1080
+			fov = 90
+		},
+		{
+			camera_name = ""
+			attachment_name = "far_02"
+			screen_width = 1920
+			screen_height = 1080
+			fov = 90
+		},
+		{
+			camera_name = ""
+			attachment_name = "gunaim_00"
+			screen_width = 1920
+			screen_height = 1080
+			fov = 55
+		},
+		{
+			camera_name = ""
+			attachment_name = "gunaim_01"
+			screen_width = 1920
+			screen_height = 1080
+			fov = 55
+		},
+		{
+			camera_name = ""
+			attachment_name = "gunaim_02"
+			screen_width = 1920
+			screen_height = 1080
+			fov = 55
+		},
+	]
+	BoneConstraintList = 
+	[
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ -0.0, 0.0, -0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 2209750389
+					m_flWeight = 0.5
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ -0.0, -0.0, -0.127455, 0.991844 ]
+					m_vOffset = [ 8.929581, -0.000004, 0.0 ]
+					m_nBoneHash = 1237665725
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.0, -0.0, -0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 4111946261
+					m_flWeight = -1.0
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.104185, -0.332561, 0.128489, 0.928461 ]
+					m_vOffset = [ 14.265896, 0.000004, 0.000015 ]
+					m_nBoneHash = 1291619918
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.0, -0.0, -0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 3117775412
+					m_flWeight = -0.5
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.104185, -0.332561, 0.128489, 0.928461 ]
+					m_vOffset = [ 14.265896, 0.000004, 0.000015 ]
+					m_nBoneHash = 1291619918
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 2728902531
+					m_flWeight = 0.5
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.745586, -0.036398, 0.034887, 0.664499 ]
+					m_vOffset = [ 20.104074, 0.0, -0.000011 ]
+					m_nBoneHash = 2305728263
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 3983226597
+					m_flWeight = 1.0
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.745586, -0.036398, 0.034887, 0.664499 ]
+					m_vOffset = [ 20.104074, 0.0, -0.000011 ]
+					m_nBoneHash = 2305728263
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 1884536544
+					m_flWeight = -1.0
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.067624, -0.125393, 0.987977, 0.060043 ]
+					m_vOffset = [ -4.671703, 0.668587, 6.116849 ]
+					m_nBoneHash = 475370876
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 4249383454
+					m_flWeight = -0.5
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.067624, -0.125393, 0.987977, 0.060043 ]
+					m_vOffset = [ -4.671703, 0.668587, 6.116849 ]
+					m_nBoneHash = 475370876
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 2620722844
+					m_flWeight = -1.0
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.104184, -0.332561, 0.128489, 0.928461 ]
+					m_vOffset = [ -14.2659, -0.000003, 0.0 ]
+					m_nBoneHash = 1258956371
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 3732228795
+					m_flWeight = -0.5
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.104184, -0.332561, 0.128489, 0.928461 ]
+					m_vOffset = [ -14.2659, -0.000003, 0.0 ]
+					m_nBoneHash = 1258956371
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 2861220322
+					m_flWeight = 0.5
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.745586, -0.036398, 0.034887, 0.664499 ]
+					m_vOffset = [ -20.10408, -0.000004, 0.000004 ]
+					m_nBoneHash = 3782808388
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 400205573
+					m_flWeight = 1.0
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.745586, -0.036398, 0.034887, 0.664499 ]
+					m_vOffset = [ -20.10408, -0.000004, 0.000004 ]
+					m_nBoneHash = 3782808388
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.0, -0.0, -0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 3677634263
+					m_flWeight = -1.0
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ -0.125393, -0.067624, -0.060044, 0.987977 ]
+					m_vOffset = [ -4.6717, 0.668587, -6.116863 ]
+					m_nBoneHash = 609771703
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.0, -0.0, -0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 892942652
+					m_flWeight = -0.5
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ -0.125393, -0.067624, -0.060044, 0.987977 ]
+					m_vOffset = [ -4.6717, 0.668587, -6.116863 ]
+					m_nBoneHash = 609771703
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+		{
+			_class = "CAimConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 1.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.502872, -0.445938, -0.731399, 0.115392 ]
+					m_vBasePosition = [ -7.904419, 10.851439, 95.808014 ]
+					m_nBoneHash = 2520757600
+					m_flWeight = 1.0
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.0, -0.0, 0.0, 1.0 ]
+					m_vOffset = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 2595300138
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+				{
+					m_qOffset = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vOffset = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 268392351
+					m_sName = ""
+					m_flWeight = 0.0
+					m_bIsAttachment = false
+				},
+			]
+			m_qAimOffset = [ 0.5, 0.5, 0.5, 0.5 ]
+			m_nUpType = 2
+		},
+		{
+			_class = "CAimConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, -1.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ -0.731399, 0.115391, -0.502872, 0.445938 ]
+					m_vBasePosition = [ -7.904411, -10.851418, 95.807999 ]
+					m_nBoneHash = 3659207800
+					m_flWeight = 1.0
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vOffset = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 130814654
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+				{
+					m_qOffset = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vOffset = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 268392351
+					m_sName = ""
+					m_flWeight = 0.0
+					m_bIsAttachment = false
+				},
+			]
+			m_qAimOffset = [ -0.5, 0.5, -0.5, 0.5 ]
+			m_nUpType = 2
+		},
+		{
+			_class = "COrientConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.742886, 0.463265, -0.303663, 0.375891 ]
+					m_vBasePosition = [ -6.581619, 24.895834, 75.710274 ]
+					m_nBoneHash = 2433533916
+					m_flWeight = 1.0
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.0, -0.0, -0.0, 1.0 ]
+					m_vOffset = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 730178398
+					m_sName = ""
+					m_flWeight = 0.5
+					m_bIsAttachment = false
+				},
+			]
+		},
+		{
+			_class = "COrientConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.303663, -0.375891, 0.742886, 0.463266 ]
+					m_vBasePosition = [ -6.581631, -24.895844, 75.710281 ]
+					m_nBoneHash = 1479360520
+					m_flWeight = 1.0
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vOffset = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 542075771
+					m_sName = ""
+					m_flWeight = 0.5
+					m_bIsAttachment = false
+				},
+			]
+		},
+		{
+			_class = "COrientConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ -0.489042, 0.448949, 0.630638, 0.401967 ]
+					m_vBasePosition = [ -0.938164, 9.937851, 35.22261 ]
+					m_nBoneHash = 580798584
+					m_flWeight = 1.0
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vOffset = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 2883344725
+					m_sName = ""
+					m_flWeight = 0.5
+					m_bIsAttachment = false
+				},
+			]
+		},
+		{
+			_class = "COrientConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ -0.630638, -0.401968, -0.489042, 0.448949 ]
+					m_vBasePosition = [ -0.938171, -9.937852, 35.222588 ]
+					m_nBoneHash = 3953507399
+					m_flWeight = 1.0
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vOffset = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 2098558004
+					m_sName = ""
+					m_flWeight = 0.5
+					m_bIsAttachment = false
+				},
+			]
+		},
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ -0.0, 0.0, -0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 1611610992
+					m_flWeight = -1.0
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ -0.0, -0.0, 0.03187, 0.999492 ]
+					m_vOffset = [ 7.480659, 0.0, 0.0 ]
+					m_nBoneHash = 2008498285
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ -0.0, 0.0, -0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 2209750389
+					m_flWeight = 0.5
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ -0.0, -0.0, -0.127455, 0.991844 ]
+					m_vOffset = [ 8.929581, -0.000004, 0.0 ]
+					m_nBoneHash = 1237665725
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.0, -0.0, -0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 4111946261
+					m_flWeight = -1.0
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.104185, -0.332561, 0.128489, 0.928461 ]
+					m_vOffset = [ 14.265896, 0.000004, 0.000015 ]
+					m_nBoneHash = 1291619918
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.0, -0.0, -0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 3117775412
+					m_flWeight = -0.5
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.104185, -0.332561, 0.128489, 0.928461 ]
+					m_vOffset = [ 14.265896, 0.000004, 0.000015 ]
+					m_nBoneHash = 1291619918
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 2728902531
+					m_flWeight = 0.5
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.745586, -0.036398, 0.034887, 0.664499 ]
+					m_vOffset = [ 20.104074, 0.0, -0.000011 ]
+					m_nBoneHash = 2305728263
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 3983226597
+					m_flWeight = 1.0
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.745586, -0.036398, 0.034887, 0.664499 ]
+					m_vOffset = [ 20.104074, 0.0, -0.000011 ]
+					m_nBoneHash = 2305728263
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 1884536544
+					m_flWeight = -1.0
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.067624, -0.125393, 0.987977, 0.060043 ]
+					m_vOffset = [ -4.671703, 0.668587, 6.116849 ]
+					m_nBoneHash = 475370876
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 4249383454
+					m_flWeight = -0.5
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.067624, -0.125393, 0.987977, 0.060043 ]
+					m_vOffset = [ -4.671703, 0.668587, 6.116849 ]
+					m_nBoneHash = 475370876
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 2620722844
+					m_flWeight = -1.0
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.104184, -0.332561, 0.128489, 0.928461 ]
+					m_vOffset = [ -14.2659, -0.000003, 0.0 ]
+					m_nBoneHash = 1258956371
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 3732228795
+					m_flWeight = -0.5
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.104184, -0.332561, 0.128489, 0.928461 ]
+					m_vOffset = [ -14.2659, -0.000003, 0.0 ]
+					m_nBoneHash = 1258956371
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 2861220322
+					m_flWeight = 0.5
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.745586, -0.036398, 0.034887, 0.664499 ]
+					m_vOffset = [ -20.10408, -0.000004, 0.000004 ]
+					m_nBoneHash = 3782808388
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 400205573
+					m_flWeight = 1.0
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.745586, -0.036398, 0.034887, 0.664499 ]
+					m_vOffset = [ -20.10408, -0.000004, 0.000004 ]
+					m_nBoneHash = 3782808388
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.0, -0.0, -0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 3677634263
+					m_flWeight = -1.0
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ -0.125393, -0.067624, -0.060044, 0.987977 ]
+					m_vOffset = [ -4.6717, 0.668587, -6.116863 ]
+					m_nBoneHash = 609771703
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.0, -0.0, -0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 892942652
+					m_flWeight = -0.5
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ -0.125393, -0.067624, -0.060044, 0.987977 ]
+					m_vOffset = [ -4.6717, 0.668587, -6.116863 ]
+					m_nBoneHash = 609771703
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+		{
+			_class = "CAimConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 1.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.502872, -0.445938, -0.731399, 0.115392 ]
+					m_vBasePosition = [ -7.904419, 10.851439, 95.808014 ]
+					m_nBoneHash = 2520757600
+					m_flWeight = 1.0
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.0, -0.0, 0.0, 1.0 ]
+					m_vOffset = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 2595300138
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+				{
+					m_qOffset = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vOffset = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 268392351
+					m_sName = ""
+					m_flWeight = 0.0
+					m_bIsAttachment = false
+				},
+			]
+			m_qAimOffset = [ 0.5, 0.5, 0.5, 0.5 ]
+			m_nUpType = 2
+		},
+		{
+			_class = "CAimConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, -1.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ -0.731399, 0.115391, -0.502872, 0.445938 ]
+					m_vBasePosition = [ -7.904411, -10.851418, 95.807999 ]
+					m_nBoneHash = 3659207800
+					m_flWeight = 1.0
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vOffset = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 130814654
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+				{
+					m_qOffset = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vOffset = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 268392351
+					m_sName = ""
+					m_flWeight = 0.0
+					m_bIsAttachment = false
+				},
+			]
+			m_qAimOffset = [ -0.5, 0.5, -0.5, 0.5 ]
+			m_nUpType = 2
+		},
+		{
+			_class = "COrientConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.742886, 0.463265, -0.303663, 0.375891 ]
+					m_vBasePosition = [ -6.581619, 24.895834, 75.710274 ]
+					m_nBoneHash = 2433533916
+					m_flWeight = 1.0
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.0, -0.0, -0.0, 1.0 ]
+					m_vOffset = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 730178398
+					m_sName = ""
+					m_flWeight = 0.5
+					m_bIsAttachment = false
+				},
+			]
+		},
+		{
+			_class = "COrientConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ 0.303663, -0.375891, 0.742886, 0.463266 ]
+					m_vBasePosition = [ -6.581631, -24.895844, 75.710281 ]
+					m_nBoneHash = 1479360520
+					m_flWeight = 1.0
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vOffset = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 542075771
+					m_sName = ""
+					m_flWeight = 0.5
+					m_bIsAttachment = false
+				},
+			]
+		},
+		{
+			_class = "COrientConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ -0.489042, 0.448949, 0.630638, 0.401967 ]
+					m_vBasePosition = [ -0.938164, 9.937851, 35.22261 ]
+					m_nBoneHash = 580798584
+					m_flWeight = 1.0
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vOffset = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 2883344725
+					m_sName = ""
+					m_flWeight = 0.5
+					m_bIsAttachment = false
+				},
+			]
+		},
+		{
+			_class = "COrientConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ -0.630638, -0.401968, -0.489042, 0.448949 ]
+					m_vBasePosition = [ -0.938171, -9.937852, 35.222588 ]
+					m_nBoneHash = 3953507399
+					m_flWeight = 1.0
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ 0.0, 0.0, 0.0, 1.0 ]
+					m_vOffset = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 2098558004
+					m_sName = ""
+					m_flWeight = 0.5
+					m_bIsAttachment = false
+				},
+			]
+		},
+		{
+			_class = "CTiltTwistConstraint"
+			m_name = ""
+			m_vUpVector = [ 0.0, 0.0, 0.0 ]
+			m_slaves = 
+			[
+				{
+					m_qBaseOrientation = [ -0.0, 0.0, -0.0, 1.0 ]
+					m_vBasePosition = [ 0.0, 0.0, 0.0 ]
+					m_nBoneHash = 1611610992
+					m_flWeight = -1.0
+					m_sName = ""
+				},
+			]
+			m_targets = 
+			[
+				{
+					m_qOffset = [ -0.0, -0.0, 0.03187, 0.999492 ]
+					m_vOffset = [ 7.480659, 0.0, 0.0 ]
+					m_nBoneHash = 2008498285
+					m_sName = ""
+					m_flWeight = 1.0
+					m_bIsAttachment = false
+				},
+			]
+			m_nTargetAxis = 0
+			m_nSlaveAxis = 0
+		},
+	]
+}

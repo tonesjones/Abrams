@@ -1,0 +1,186 @@
+{
+  "pelvis": {
+    "position_inches": 0.00016779986993117476,
+    "basis_max_error": 4.1723262000914474e-07
+  },
+  "spine_0": {
+    "position_inches": 0.00042788436875659434,
+    "basis_max_error": 3.2145712322018127e-06
+  },
+  "spine_1": {
+    "position_inches": 0.0011153689526930209,
+    "basis_max_error": 9.37073547446765e-06
+  },
+  "spine_3": {
+    "position_inches": 0.004095760593234566,
+    "basis_max_error": 2.5868198089917804e-05
+  },
+  "clavicle_L": {
+    "position_inches": 0.00973592207752843,
+    "basis_max_error": 6.548594954769449e-05
+  },
+  "clavicle_R": {
+    "position_inches": 0.009456344420726997,
+    "basis_max_error": 6.454778427322783e-05
+  },
+  "arm_upper_L": {
+    "position_inches": 0.01932265773592162,
+    "basis_max_error": 0.0001502885689795841
+  },
+  "arm_upper_R": {
+    "position_inches": 0.01796219613537595,
+    "basis_max_error": 0.00013991180710448692
+  },
+  "arm_lower_L": {
+    "position_inches": 0.03159698771064903,
+    "basis_max_error": 0.00028092605340512833
+  },
+  "arm_lower_R": {
+    "position_inches": 0.02843855296332338,
+    "basis_max_error": 0.0002523107972848271
+  },
+  "leg_upper_L": {
+    "position_inches": 0.0003868143688024603,
+    "basis_max_error": 3.1687073538400057e-06
+  },
+  "leg_upper_R": {
+    "position_inches": 0.0003786944963572079,
+    "basis_max_error": 3.0472172499740324e-06
+  },
+  "tail_0": {
+    "position_inches": 0.0003885300793405615,
+    "basis_max_error": 2.7649075864388806e-06
+  },
+  "hand_L": {
+    "position_inches": 0.05227666317681867,
+    "basis_max_error": 0.0005338708757162136
+  },
+  "hand_R": {
+    "position_inches": 0.04578333803051571,
+    "basis_max_error": 0.00046482469705866336
+  },
+  "leg_lower_L": {
+    "position_inches": 0.00047209182296608715,
+    "basis_max_error": 1.032552409918619e-05
+  },
+  "leg_lower_R": {
+    "position_inches": 0.0004759737583479996,
+    "basis_max_error": 9.536719967062623e-06
+  },
+  "tail_4": {
+    "position_inches": 0.002578969817125667,
+    "basis_max_error": 3.266325578021867e-05
+  },
+  "neck_0": {
+    "position_inches": 0.009623830368260188,
+    "basis_max_error": 6.633858569626838e-05
+  },
+  "finger_thumb_0_L": {
+    "position_inches": 0.10471910135206011,
+    "basis_max_error": 0.0008716062054401341
+  },
+  "finger_index_0_L": {
+    "position_inches": 0.04905314772754872,
+    "basis_max_error": 0.001174397656817594
+  },
+  "finger_middle_0_L": {
+    "position_inches": 0.04892500547088645,
+    "basis_max_error": 0.0013599979435194864
+  },
+  "finger_pinky_0_L": {
+    "position_inches": 0.048198587678680085,
+    "basis_max_error": 0.0014269935910775633
+  },
+  "finger_thumb_0_R": {
+    "position_inches": 0.08988113556081812,
+    "basis_max_error": 0.0007451715998328945
+  },
+  "finger_index_0_R": {
+    "position_inches": 0.04305368288279615,
+    "basis_max_error": 0.0009988043956384862
+  },
+  "finger_middle_0_R": {
+    "position_inches": 0.04285256956180811,
+    "basis_max_error": 0.0011567844912943048
+  },
+  "finger_pinky_0_R": {
+    "position_inches": 0.04230792770384826,
+    "basis_max_error": 0.0012150132518126133
+  },
+  "ankle_L": {
+    "position_inches": 0.0004769186124434578,
+    "basis_max_error": 2.3100903542183637e-05
+  },
+  "ankle_R": {
+    "position_inches": 0.0005520546905351442,
+    "basis_max_error": 2.0438763983499086e-05
+  },
+  "tail_8": {
+    "position_inches": 0.017858756591288154,
+    "basis_max_error": 0.00029891124075209774
+  },
+  "head": {
+    "position_inches": 0.011558345695133683,
+    "basis_max_error": 0.00017904511207544882
+  },
+  "finger_thumb_1_L": {
+    "position_inches": 0.09798215503061065,
+    "basis_max_error": 0.0016890294588728372
+  },
+  "finger_index_1_L": {
+    "position_inches": 0.04556963515799819,
+    "basis_max_error": 0.001731969149871282
+  },
+  "finger_middle_1_L": {
+    "position_inches": 0.045276396960653435,
+    "basis_max_error": 0.0017919436773892183
+  },
+  "finger_pinky_1_L": {
+    "position_inches": 0.044550057094197015,
+    "basis_max_error": 0.0019331605767189952
+  },
+  "arm_lower_L_TWIST1": {
+    "position_inches": 0.05369631768290103,
+    "basis_max_error": 0.000541815259875178
+  },
+  "arm_upper_L_TWIST1": {
+    "position_inches": 0.03349240707384608,
+    "basis_max_error": 0.00030482750013283155
+  },
+  "finger_thumb_1_R": {
+    "position_inches": 0.08414260051937913,
+    "basis_max_error": 0.0014300506413236214
+  },
+  "finger_index_1_R": {
+    "position_inches": 0.04003110179545277,
+    "basis_max_error": 0.0014620523499447868
+  },
+  "finger_middle_1_R": {
+    "position_inches": 0.039717628957870545,
+    "basis_max_error": 0.0015145681211654605
+  },
+  "finger_pinky_1_R": {
+    "position_inches": 0.039140406611103025,
+    "basis_max_error": 0.0016360847740664042
+  },
+  "arm_lower_R_TWIST1": {
+    "position_inches": 0.04713656675611829,
+    "basis_max_error": 0.0004743924353600715
+  },
+  "arm_upper_R_TWIST1": {
+    "position_inches": 0.030135769559116437,
+    "basis_max_error": 0.00027365219651886985
+  },
+  "ball_L": {
+    "position_inches": 0.0010667783009333024,
+    "basis_max_error": 4.9982660860647954e-05
+  },
+  "ball_R": {
+    "position_inches": 0.0009157584077202334,
+    "basis_max_error": 4.5124524441386704e-05
+  },
+  "tail_12": {
+    "position_inches": 0.02365406815817581,
+    "basis_max_error": 0.0026006291171757345
+  }
+}

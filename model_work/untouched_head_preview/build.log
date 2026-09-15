@@ -1,0 +1,84 @@
+17:48:15 | INFO: Data are loaded, start creating Blender stuff
+17:48:15 | INFO: Blender create Mesh node Sully_lod0_sully_mat.002_0
+17:48:15 | INFO: Blender create Mesh node Sully_lod0_sully_eyes.002_0
+17:48:15 | INFO: glTF import finished in 0.05s
+Blender 4.5.10 LTS (hash 6dc0b208d1b5 built 2026-05-19 01:33:42)
+Read blend: "C:\TestCode\Abrams\model_work\fullbody\accepted_baseline\sulley_fullbody.blend"
+Fra:1 Mem:198.31M (Peak 212.61M) | Time:00:13.90 | Rendering 1 / 64 samples
+Fra:1 Mem:198.31M (Peak 212.61M) | Time:00:14.14 | Rendering 25 / 64 samples
+Fra:1 Mem:198.31M (Peak 212.61M) | Time:00:14.26 | Rendering 50 / 64 samples
+Fra:1 Mem:198.31M (Peak 212.61M) | Time:00:14.27 | Rendering 64 / 64 samples
+Saved: 'C:\TestCode\Abrams\model_work\untouched_head_preview\body_front.png'
+Time: 00:14.43 (Saving: 00:00.14)
+
+Fra:1 Mem:198.55M (Peak 198.55M) | Time:00:00.08 | Rendering 1 / 64 samples
+Fra:1 Mem:198.55M (Peak 198.55M) | Time:00:00.11 | Rendering 25 / 64 samples
+Fra:1 Mem:198.55M (Peak 198.55M) | Time:00:00.15 | Rendering 50 / 64 samples
+Fra:1 Mem:198.55M (Peak 198.55M) | Time:00:00.17 | Rendering 64 / 64 samples
+Saved: 'C:\TestCode\Abrams\model_work\untouched_head_preview\body_threequarter.png'
+Time: 00:00.23 (Saving: 00:00.05)
+
+Fra:1 Mem:198.55M (Peak 198.55M) | Time:00:00.04 | Rendering 1 / 64 samples
+Fra:1 Mem:198.55M (Peak 198.55M) | Time:00:00.08 | Rendering 25 / 64 samples
+Fra:1 Mem:198.55M (Peak 198.55M) | Time:00:00.12 | Rendering 50 / 64 samples
+Fra:1 Mem:198.55M (Peak 198.55M) | Time:00:00.14 | Rendering 64 / 64 samples
+Saved: 'C:\TestCode\Abrams\model_work\untouched_head_preview\face_front.png'
+Time: 00:00.21 (Saving: 00:00.05)
+
+Fra:1 Mem:198.55M (Peak 198.55M) | Time:00:00.04 | Rendering 1 / 64 samples
+Fra:1 Mem:198.55M (Peak 198.55M) | Time:00:00.08 | Rendering 25 / 64 samples
+Fra:1 Mem:198.55M (Peak 198.55M) | Time:00:00.12 | Rendering 50 / 64 samples
+Fra:1 Mem:198.55M (Peak 198.55M) | Time:00:00.14 | Rendering 64 / 64 samples
+Saved: 'C:\TestCode\Abrams\model_work\untouched_head_preview\face_threequarter.png'
+Time: 00:00.21 (Saving: 00:00.05)
+
+Fra:1 Mem:197.65M (Peak 197.65M) | Time:00:00.03 | Rendering 1 / 64 samples
+Fra:1 Mem:197.65M (Peak 197.65M) | Time:00:00.07 | Rendering 25 / 64 samples
+Fra:1 Mem:197.65M (Peak 197.65M) | Time:00:00.11 | Rendering 50 / 64 samples
+Fra:1 Mem:197.65M (Peak 197.65M) | Time:00:00.14 | Rendering 64 / 64 samples
+Saved: 'C:\TestCode\Abrams\model_work\untouched_head_preview\source_head_control.png'
+Time: 00:00.21 (Saving: 00:00.05)
+
+Info: Saved as "untouched_head_approval.blend"
+{
+  "scope": "approval-only preview; no compile/package/install",
+  "source": "C:\\Users\\Owner\\Downloads\\sully.glb",
+  "source_head_transform": {
+    "uniform_scale": 0.044,
+    "z_offset_m": -0.12,
+    "target_head_m": [
+      -7.342035814872361e-07,
+      0.05870690569281578,
+      2.6967713832855225
+    ]
+  },
+  "preserved": [
+    "source head coordinates after selection",
+    "separate eye mesh",
+    "source materials and UV mapping",
+    "horn and mouth geometry"
+  ],
+  "not_applied": [
+    "facial reshaping",
+    "smoothing modifier",
+    "procedural fur",
+    "V2 face edits",
+    "V3 donor substitution"
+  ],
+  "accepted_body_head_vertices_removed_for_preview": 2567,
+  "old_v2_face_objects_remaining": 0,
+  "source_head_control_render": "C:\\TestCode\\Abrams\\model_work\\untouched_head_preview\\source_head_control.png",
+  "new_head_meshes": [
+    {
+      "name": "untouched_head_surface",
+      "vertices": 2706
+    },
+    {
+      "name": "untouched_head_eyes",
+      "vertices": 292
+    }
+  ],
+  "fit_limitations": "The source head is placed at the stock head location for a static visual fit only. Neck motion and the later single-head-weight binding are intentionally not tested here."
+}
+
+Blender quit

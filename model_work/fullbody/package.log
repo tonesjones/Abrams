@@ -1,0 +1,35 @@
+Bind comparison: position inches 0.10471910135206011 basis error 0.0026006291171757345
+CTRL abrams_model -> donor body mdat=109
+CTRL abrams_face_model -> donor face mdat=113
+CTRL abrams_face_model_lod1 -> donor face mdat=113
+CTRL abrams_model_lod1 -> donor body mdat=109
+CTRL abrams_face_model_lod2 -> donor face mdat=113
+CTRL abrams_model_lod2 -> donor body mdat=109
+CTRL abrams_face_model_lod3 -> donor face mdat=113
+CTRL abrams_model_lod3 -> donor body mdat=109
+remaps: body=46 face=1 total=838 (was 2810)
+  face bones: ['head']
+wrote C:\TestCode\Abrams\model_work\fullbody\abrams_fullbody.vmdl_c (8910615 bytes) blocks=117
+RERL paths:
+  OK animgraphs/animgraph2/hero/hero.vnmgraph+abrams.vnmgraph
+  OK animgraphs/animgraph2/hero/hero_ui.vnmgraph+abrams.vnmgraph
+  OK models/heroes_wip/abrams/abrams.vnmskel
+     models/heroes_wip/abrams/abrams_book/materials/abrams_book.vmat
+     models/heroes_wip/abrams/materials/abrams_coat.vmat
+     models/heroes_wip/abrams/materials/abrams_gun.vmat
+     models/heroes_wip/abrams/materials/abrams_head.vmat
+     models/heroes_wip/abrams/materials/abrams_lower_body.vmat
+     models/heroes_wip/abrams/materials/abrams_teeth.vmat
+     models/heroes_wip/abrams/materials/abrams_upper_body.vmat
+     particles/abilities/abrams/abrams_ambient_book.vpcf
+     particles/abilities/abrams/abrams_anim_leap_inair.vpcf
+     particles/abilities/ghost/ghost_life_drain_cast_preview_fire.vpcf
+     particles/models/heroes_wip/abrams/abrams/book_cover_trace_fx_model.vsnap
+     particles/models/heroes_wip/abrams/abrams/book_trace_fx_model.vsnap
+     scripts/tagged_sounds/abrams_anim_sounds.vdata
+reload meshes: ['abrams_model', 'abrams_face_model', 'gun_model', 'book_model', 'abrams_face_model_lod1', 'abrams_model_lod1', 'book_model_lod1', 'gun_model_lod1', 'abrams_face_model_lod2', 'abrams_model_lod2', 'book_model_lod2', 'gun_model_lod2', 'abrams_face_model_lod3', 'abrams_model_lod3', 'book_model_lod3', 'gun_model_lod3']
+reload remaps 838 starts [0, 46, 47, 120, 210, 211, 257, 347, 420, 421, 467, 556, 629, 630, 676, 765]
+AG2 refs present: True count 2
+NmSkeleton refs: True
+camera settings: {'m_flCameraSideOffset': -44.0, 'm_flCameraBackOffset': 111.0, 'm_flCameraBackOffsetAiming': 75.0, 'm_flCameraHeightStanding': 100.0}
+PACKAGED C:\TestCode\Abrams\release\fullbody\pak69_sulley_fullbody_test_dir.vpk

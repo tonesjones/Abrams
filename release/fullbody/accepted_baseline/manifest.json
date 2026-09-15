@@ -1,0 +1,24 @@
+{
+  "status": "OFFLINE_CHECKED_IN_GAME_TEST_PENDING",
+  "stock_sha256": "e77a3feadd321c98488186e777555c04c5956f680c327c810e714fa1dffd3135",
+  "vpk_sha256": "d5bc6295b603c98b17b22634218bcb7c2369cbb00c18b27d9cc7c5d048f227f0",
+  "bind_max_error_inches": 0.10471910135206011,
+  "bind_max_basis_error": 0.0026006291171757345,
+  "modified_original_blocks": [
+    "CTRL",
+    "RERL",
+    "DATA"
+  ],
+  "camera_and_attachments": "Unchanged from stock DATA",
+  "files": {
+    "models/heroes_wip/abrams/abrams.vmdl_c": "592daafd123fbaaa96b9fce4fd98cd68d76d57841df5545a0beda6e78fcb6617",
+    "models/heroes_wip/abrams/materials/sulley_fullbody_body.vmat_c": "4ce74edb6e08f71b6e857235188709c9c19c9bb8c75037f9d5df4b45ba0b9e82",
+    "models/heroes_wip/abrams/materials/sulley_fullbody_body_png_e6a1b844.vtex_c": "71e731725bfde6a8c73edaeee873cd4c7a217d2ad1c64c6d3875be46a561c85f",
+    "models/heroes_wip/abrams/materials/sulley_fullbody_body_vmat_g_tambientocclusion_77e119ed.vtex_c": "027d83ead40e345faca4e253946921b819962a2bd4a11606ac1c84f785f819a7",
+    "models/heroes_wip/abrams/materials/sulley_fullbody_body_vmat_g_tnormalroughness_d62ad136.vtex_c": "9bc82a7a5c6501c5e2f874e9de399dbc3bda9117ef783fee99840479a4e9c43f",
+    "models/heroes_wip/abrams/materials/sulley_fullbody_eyes.vmat_c": "1afb0c036177def93648876b787930a1a1afc0813264e4cfcce77c8d23664878",
+    "models/heroes_wip/abrams/materials/sulley_fullbody_eyes_png_78cba0b3.vtex_c": "c9e35d9773fbf99a81d7a33008ef638f6acf429f819a21a5d0960f22195ce990",
+    "models/heroes_wip/abrams/materials/sulley_fullbody_eyes_vmat_g_tambientocclusion_77e119ed.vtex_c": "027d83ead40e345faca4e253946921b819962a2bd4a11606ac1c84f785f819a7",
+    "models/heroes_wip/abrams/materials/sulley_fullbody_eyes_vmat_g_tnormalroughness_d62ad136.vtex_c": "9bc82a7a5c6501c5e2f874e9de399dbc3bda9117ef783fee99840479a4e9c43f"
+  }
+}

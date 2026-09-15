@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import argparse
 import copy
+import re
 import struct
 import sys
 from pathlib import Path
@@ -23,7 +24,7 @@ ROOT = Path(r"C:\TestCode\Abrams")
 HOST_DEFAULT = ROOT / r"model_work\abrams_backup.vmdl_c"
 DONOR_DEFAULT = (
     ROOT
-    / r"tools\Reduced_CSDK_12\game\citadel_addons\sully_abrams\models\heroes_wip\abrams\abrams.vmdl_c"
+    / r"tools\Reduced_CSDK_12\game\citadel_addons\sulley_fullbody\models\heroes_wip\abrams\sulley_donor.vmdl_c"
 )
 OUT_DEFAULT = ROOT / r"model_work\abrams_spliced.vmdl_c"
 
@@ -183,7 +184,67 @@ def rerl_names(blocks: list[Block]) -> list[str]:
     return []
 
 
-def splice(host_path: Path, donor_path: Path, out_path: Path) -> None:
+def apply_camera_overrides(
+    host_data: dict,
+    *,
+    side_offset: float | None = None,
+    back_offset: float | None = None,
+    aiming_back_offset: float | None = None,
+) -> None:
+    """Apply optional camera-clearance settings without changing the default build."""
+    overrides = {
+        "m_flCameraSideOffset": side_offset,
+        "m_flCameraBackOffset": back_offset,
+        "m_flCameraBackOffsetAiming": aiming_back_offset,
+    }
+    requested = {key: value for key, value in overrides.items() if value is not None}
+    if not requested:
+        return
+
+    model_info = host_data.get("m_modelInfo")
+    if not isinstance(model_info, dict) or not isinstance(model_info.get("m_keyValueText"), str):
+        raise SystemExit("host DATA is missing m_modelInfo.m_keyValueText")
+    text = model_info["m_keyValueText"]
+    if "CitadelCameraSettings_t" not in text:
+        raise SystemExit("host model keyvalues are missing CitadelCameraSettings_t")
+    for key, value in requested.items():
+        pattern = rf"({re.escape(key)}\s*=\s*)(-?\d+(?:\.\d+)?)"
+        match = re.search(pattern, text)
+        if match is None:
+            raise SystemExit(f"host camera settings are missing {key}")
+        old = float(match.group(2))
+        replacement = rf"\g<1>{float(value):.1f}"
+        text, count = re.subn(pattern, replacement, text, count=1)
+        if count != 1:
+            raise SystemExit(f"expected one camera setting for {key}, found {count}")
+        print(f"camera {key}: {old} -> {float(value):.1f}")
+    model_info["m_keyValueText"] = text
+
+
+def read_camera_settings(data: dict) -> dict[str, float | None]:
+    text = data.get("m_modelInfo", {}).get("m_keyValueText", "")
+    keys = (
+        "m_flCameraSideOffset",
+        "m_flCameraBackOffset",
+        "m_flCameraBackOffsetAiming",
+        "m_flCameraHeightStanding",
+    )
+    values: dict[str, float | None] = {}
+    for key in keys:
+        match = re.search(rf"{re.escape(key)}\s*=\s*(-?\d+(?:\.\d+)?)", text)
+        values[key] = float(match.group(1)) if match else None
+    return values
+
+
+def splice(
+    host_path: Path,
+    donor_path: Path,
+    out_path: Path,
+    *,
+    camera_side_offset: float | None = None,
+    camera_back_offset: float | None = None,
+    camera_aiming_back_offset: float | None = None,
+) -> None:
     _hdr, ver, host_blocks = read_resource(host_path)
     _dh, _dv, donor_blocks = read_resource(donor_path)
 
@@ -215,6 +276,12 @@ def splice(host_path: Path, donor_path: Path, out_path: Path) -> None:
     host_names = list(host_data["m_modelSkeleton"]["m_boneName"])
     donor_names = list(donor_data["m_modelSkeleton"]["m_boneName"])
     rebuild_remaps(host_data, donor_data, host_names, donor_names)
+    apply_camera_overrides(
+        host_data,
+        side_offset=camera_side_offset,
+        back_offset=camera_back_offset,
+        aiming_back_offset=camera_aiming_back_offset,
+    )
 
     # write CTRL + DATA back
     for i, b in enumerate(host_blocks):
@@ -243,6 +310,7 @@ def splice(host_path: Path, donor_path: Path, out_path: Path) -> None:
     ag2 = data.get("m_animGraph2Refs")
     print("AG2 refs present:", ag2 is not None, "count", len(ag2) if ag2 else 0)
     print("NmSkeleton refs:", data.get("m_vecNmSkeletonRefs") is not None)
+    print("camera settings:", read_camera_settings(data))
 
 
 def roundtrip_kv(host_path: Path, out_path: Path) -> None:
@@ -289,13 +357,23 @@ def main() -> int:
     s.add_argument("--host", default=str(HOST_DEFAULT))
     s.add_argument("--donor", default=str(DONOR_DEFAULT))
     s.add_argument("--out", default=str(OUT_DEFAULT))
+    s.add_argument("--camera-side-offset", type=float)
+    s.add_argument("--camera-back-offset", type=float)
+    s.add_argument("--camera-aiming-back-offset", type=float)
     args = p.parse_args()
     if args.cmd == "inspect":
         inspect(Path(args.path))
     elif args.cmd == "roundtrip":
         roundtrip_kv(Path(args.host), Path(args.out))
     else:
-        splice(Path(args.host), Path(args.donor), Path(args.out))
+        splice(
+            Path(args.host),
+            Path(args.donor),
+            Path(args.out),
+            camera_side_offset=args.camera_side_offset,
+            camera_back_offset=args.camera_back_offset,
+            camera_aiming_back_offset=args.camera_aiming_back_offset,
+        )
     return 0
 
 

@@ -1,0 +1,31 @@
+{
+  "status": "OFFLINE_CHECKED_IN_GAME_TEST_PENDING",
+  "revision": "head_donor_v3",
+  "baseline_user_feedback": "Animations and crosshair placement confirmed working before the face revision.",
+  "stock_sha256": "e77a3feadd321c98488186e777555c04c5956f680c327c810e714fa1dffd3135",
+  "vpk_sha256": "fb58ae6a89a23f22cb084b9ee17f54938b1b7430525f26cbf6d23ae3fbc8be4f",
+  "bind_max_error_inches": 0.10471910135206011,
+  "bind_max_basis_error": 0.0026006291171757345,
+  "modified_original_blocks": [
+    "CTRL",
+    "RERL",
+    "DATA"
+  ],
+  "camera_and_attachments": "Unchanged from stock DATA",
+  "files": {
+    "models/heroes_wip/abrams/abrams.vmdl_c": "69997509d6a1a30f2a1f97c9dfc6e3bbe4064f121a6a1672e04c7bd24853076a",
+    "panorama/images/heroes/bull_card_psd.vtex_c": "df4543033268083660d6eb90240df9fc8fdb7cfdbe9bbfbc9c5da7e6d8a0246c",
+    "panorama/images/heroes/bull_card_gloat_psd.vtex_c": "15ae1b075781ed090bb6ec1f6ab15cc72aef4cb6e84ccc45d4c0ef743f41276f",
+    "panorama/images/heroes/bull_card_critical_psd.vtex_c": "a8a175693820ea52bb441fd6936558eafc3552e1838a29e151005fe938c529ef",
+    "panorama/images/heroes/bull_sm_psd.vtex_c": "ed6c99a1013c22db4fe025925300bc53c8636bea1f3f940e7b07de0776b27965",
+    "panorama/images/heroes/bull_vertical_psd.vtex_c": "2c8eb72ac6aa64d4f5dd1946c829aaf4d3e51e26f6b24fe8fda12d2acd3c16d6",
+    "models/heroes_wip/abrams/materials/sulley_head_donor_body.vmat_c": "6a35cd1ad85ea18603422949413ff301a11989396a17729cdf7206cadaa7433b",
+    "models/heroes_wip/abrams/materials/sulley_head_donor_body_normal_png_138a7f39.vtex_c": "12f6c781186aa5b3c13fe9d1ed38f725cd53480841837869a574978fbc8c2617",
+    "models/heroes_wip/abrams/materials/sulley_head_donor_body_png_8bbbaa17.vtex_c": "31a30b5c9e5a7fa7abfbb27d7b5e686903a1b8eceecf18d8dd8796377f77dc33",
+    "models/heroes_wip/abrams/materials/sulley_head_donor_body_vmat_g_tambientocclusion_77e119ed.vtex_c": "027d83ead40e345faca4e253946921b819962a2bd4a11606ac1c84f785f819a7",
+    "models/heroes_wip/abrams/materials/sulley_head_donor_face.vmat_c": "8fc88af0e4355852452811e877572f536d7ea038447f5d8bf72a03140ec3cac6",
+    "models/heroes_wip/abrams/materials/sulley_head_donor_face_png_446d8f9b.vtex_c": "b8be0d859c39176c62a2b848f03167e3ecda88c2e164d54951064f7c49525523",
+    "models/heroes_wip/abrams/materials/sulley_head_donor_face_vmat_g_tambientocclusion_77e119ed.vtex_c": "027d83ead40e345faca4e253946921b819962a2bd4a11606ac1c84f785f819a7",
+    "models/heroes_wip/abrams/materials/sulley_head_donor_face_vmat_g_tnormalroughness_4ef06929.vtex_c": "955f80d61aed2b841838cd6dc4958fa4c70b66b6e1ce8416d551c78cc038290e"
+  }
+}

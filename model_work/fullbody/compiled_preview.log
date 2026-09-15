@@ -1,0 +1,60 @@
+09:32:17 | INFO: Data are loaded, start creating Blender stuff
+09:32:17 | INFO: Blender create Mesh node C:\TestCode\Abrams\model_work\fullbody\abrams_fullbody.vmdl_c.abrams_model
+09:32:17 | INFO: Blender create Mesh node C:\TestCode\Abrams\model_work\fullbody\abrams_fullbody.vmdl_c.abrams_face_model
+09:32:17 | INFO: Blender create Mesh node C:\TestCode\Abrams\model_work\fullbody\abrams_fullbody.vmdl_c.gun_model
+09:32:17 | INFO: Blender create Mesh node C:\TestCode\Abrams\model_work\fullbody\abrams_fullbody.vmdl_c.book_model
+09:32:18 | INFO: glTF import finished in 1.74s
+Blender 4.5.10 LTS (hash 6dc0b208d1b5 built 2026-05-19 01:33:42)
+Read blend: "C:\TestCode\Abrams\model_work\fullbody\sulley_fullbody.blend"
+Fra:36 Mem:140.30M (Peak 155.10M) | Time:00:12.84 | Rendering 1 / 64 samples
+Fra:36 Mem:140.30M (Peak 155.10M) | Time:00:12.94 | Rendering 25 / 64 samples
+Fra:36 Mem:140.30M (Peak 155.10M) | Time:00:13.05 | Rendering 50 / 64 samples
+Fra:36 Mem:140.30M (Peak 155.10M) | Time:00:13.10 | Rendering 64 / 64 samples
+Saved: 'C:\TestCode\Abrams\model_work\fullbody\compiled_previews\primary_stand_idle.png'
+Time: 00:13.21 (Saving: 00:00.08)
+
+Fra:7 Mem:137.86M (Peak 140.22M) | Time:00:00.10 | Rendering 1 / 64 samples
+Fra:7 Mem:137.86M (Peak 140.22M) | Time:00:00.12 | Rendering 25 / 64 samples
+Fra:7 Mem:137.86M (Peak 140.22M) | Time:00:00.14 | Rendering 50 / 64 samples
+Fra:7 Mem:137.86M (Peak 140.22M) | Time:00:00.16 | Rendering 64 / 64 samples
+Saved: 'C:\TestCode\Abrams\model_work\fullbody\compiled_previews\primary_run_n.png'
+Time: 00:00.19 (Saving: 00:00.02)
+
+Fra:4 Mem:136.57M (Peak 138.92M) | Time:00:00.05 | Rendering 1 / 64 samples
+Fra:4 Mem:136.57M (Peak 138.92M) | Time:00:00.07 | Rendering 25 / 64 samples
+Fra:4 Mem:136.57M (Peak 138.92M) | Time:00:00.09 | Rendering 50 / 64 samples
+Fra:4 Mem:136.57M (Peak 138.92M) | Time:00:00.10 | Rendering 64 / 64 samples
+Saved: 'C:\TestCode\Abrams\model_work\fullbody\compiled_previews\primary_stand_aim.png'
+Time: 00:00.14 (Saving: 00:00.02)
+
+Fra:8 Mem:137.85M (Peak 140.20M) | Time:00:00.05 | Rendering 1 / 64 samples
+Fra:8 Mem:137.85M (Peak 140.20M) | Time:00:00.07 | Rendering 25 / 64 samples
+Fra:8 Mem:137.85M (Peak 140.20M) | Time:00:00.09 | Rendering 50 / 64 samples
+Fra:8 Mem:137.85M (Peak 140.20M) | Time:00:00.11 | Rendering 64 / 64 samples
+Saved: 'C:\TestCode\Abrams\model_work\fullbody\compiled_previews\melee_quick_1.png'
+Time: 00:00.14 (Saving: 00:00.02)
+
+Fra:24 Mem:138.88M (Peak 141.24M) | Time:00:00.05 | Rendering 1 / 64 samples
+Fra:24 Mem:138.88M (Peak 141.24M) | Time:00:00.07 | Rendering 25 / 64 samples
+Fra:24 Mem:138.88M (Peak 141.24M) | Time:00:00.09 | Rendering 50 / 64 samples
+Fra:24 Mem:138.88M (Peak 141.24M) | Time:00:00.11 | Rendering 64 / 64 samples
+Saved: 'C:\TestCode\Abrams\model_work\fullbody\compiled_previews\slide_forward.png'
+Time: 00:00.14 (Saving: 00:00.02)
+
+Fra:5 Mem:137.81M (Peak 140.16M) | Time:00:00.05 | Rendering 1 / 64 samples
+Fra:5 Mem:137.81M (Peak 140.16M) | Time:00:00.07 | Rendering 25 / 64 samples
+Fra:5 Mem:137.81M (Peak 140.16M) | Time:00:00.09 | Rendering 50 / 64 samples
+Fra:5 Mem:137.81M (Peak 140.16M) | Time:00:00.11 | Rendering 64 / 64 samples
+Saved: 'C:\TestCode\Abrams\model_work\fullbody\compiled_previews\ability_charge.png'
+Time: 00:00.14 (Saving: 00:00.02)
+
+Fra:15 Mem:139.61M (Peak 141.97M) | Time:00:00.05 | Rendering 1 / 64 samples
+Fra:15 Mem:139.61M (Peak 141.97M) | Time:00:00.07 | Rendering 25 / 64 samples
+Fra:15 Mem:139.61M (Peak 141.97M) | Time:00:00.09 | Rendering 50 / 64 samples
+Fra:15 Mem:139.61M (Peak 141.97M) | Time:00:00.11 | Rendering 64 / 64 samples
+Saved: 'C:\TestCode\Abrams\model_work\fullbody\compiled_previews\ability_leap_smash.png'
+Time: 00:00.15 (Saving: 00:00.02)
+
+Rendered seven stock clips; in-game validation is still required.
+
+Blender quit

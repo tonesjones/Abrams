@@ -1,0 +1,21 @@
+Extensions: writing cache failed ([WinError 183] Cannot create a file when that file already exists: 'C:\\Users\\Owner\\AppData\\Roaming\\Blender Foundation\\Blender\\4.5\\extensions\\.cache').
+09:28:38 | INFO: Data are loaded, start creating Blender stuff
+09:28:38 | INFO: Blender create Mesh node C:\TestCode\Abrams\model_work\fullbody\stock\models\heroes_wip\abrams\abrams.vmdl_c.abrams_model
+09:28:38 | INFO: Blender create Mesh node C:\TestCode\Abrams\model_work\fullbody\stock\models\heroes_wip\abrams\abrams.vmdl_c.abrams_face_model
+09:28:38 | INFO: Blender create Mesh node C:\TestCode\Abrams\model_work\fullbody\stock\models\heroes_wip\abrams\abrams.vmdl_c.gun_model
+09:28:38 | INFO: Blender create Mesh node C:\TestCode\Abrams\model_work\fullbody\stock\models\heroes_wip\abrams\abrams.vmdl_c.book_model
+09:28:40 | INFO: glTF import finished in 2.18s
+Extensions: writing cache failed ([WinError 183] Cannot create a file when that file already exists: 'C:\\Users\\Owner\\AppData\\Roaming\\Blender Foundation\\Blender\\4.5\\extensions\\.cache').
+09:28:40 | INFO: Data are loaded, start creating Blender stuff
+09:28:40 | INFO: Blender create Mesh node Sully_lod0_sully_mat.002_0
+09:28:40 | INFO: Blender create Mesh node Sully_lod0_sully_eyes.002_0
+09:28:40 | INFO: glTF import finished in 0.03s
+Extensions: writing cache failed ([WinError 183] Cannot create a file when that file already exists: 'C:\\Users\\Owner\\AppData\\Roaming\\Blender Foundation\\Blender\\4.5\\extensions\\.cache').
+09:28:40 | INFO: Data are loaded, start creating Blender stuff
+09:28:40 | INFO: Blender create Mesh node C:\TestCode\Abrams\tools\Reduced_CSDK_12\game\citadel_addons\sulley_fullbody\models\heroes_wip\abrams\sulley_donor.vmdl_c.body
+09:28:40 | INFO: Blender create Mesh node C:\TestCode\Abrams\tools\Reduced_CSDK_12\game\citadel_addons\sulley_fullbody\models\heroes_wip\abrams\sulley_donor.vmdl_c.face
+09:28:40 | INFO: glTF import finished in 0.02s
+Wrote rig_inventory.json
+Blender 4.5.10 LTS (hash 6dc0b208d1b5 built 2026-05-19 01:33:42)
+
+Blender quit

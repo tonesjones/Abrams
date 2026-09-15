@@ -1,0 +1,163 @@
+Extensions: writing cache failed ([WinError 183] Cannot create a file when that file already exists: 'C:\\Users\\Owner\\AppData\\Roaming\\Blender Foundation\\Blender\\4.5\\extensions\\.cache').
+10:03:36 | INFO: Data are loaded, start creating Blender stuff
+10:03:36 | INFO: Blender create Mesh node C:\TestCode\Abrams\model_work\fullbody\stock\models\heroes_wip\abrams\abrams.vmdl_c.abrams_model
+10:03:37 | INFO: Blender create Mesh node C:\TestCode\Abrams\model_work\fullbody\stock\models\heroes_wip\abrams\abrams.vmdl_c.abrams_face_model
+10:03:37 | INFO: Blender create Mesh node C:\TestCode\Abrams\model_work\fullbody\stock\models\heroes_wip\abrams\abrams.vmdl_c.gun_model
+10:03:37 | INFO: Blender create Mesh node C:\TestCode\Abrams\model_work\fullbody\stock\models\heroes_wip\abrams\abrams.vmdl_c.book_model
+10:03:39 | INFO: glTF import finished in 2.35s
+10:03:39 | INFO: Data are loaded, start creating Blender stuff
+10:03:39 | INFO: Blender create Mesh node Sully_lod0_sully_mat.002_0
+10:03:39 | INFO: Blender create Mesh node Sully_lod0_sully_eyes.002_0
+10:03:39 | INFO: glTF import finished in 0.03s
+Blender 4.5.10 LTS (hash 6dc0b208d1b5 built 2026-05-19 01:33:42)
+Fra:1 Mem:189.48M (Peak 203.63M) | Time:00:14.18 | Rendering 1 / 64 samples
+Fra:1 Mem:189.48M (Peak 203.63M) | Time:00:14.43 | Rendering 25 / 64 samples
+Fra:1 Mem:189.48M (Peak 203.63M) | Time:00:14.49 | Rendering 50 / 64 samples
+Fra:1 Mem:189.48M (Peak 203.63M) | Time:00:14.50 | Rendering 64 / 64 samples
+Saved: 'C:\TestCode\Abrams\model_work\fullbody\preview_front.png'
+Time: 00:14.62 (Saving: 00:00.10)
+
+Fra:1 Mem:189.47M (Peak 193.14M) | Time:00:00.08 | Rendering 1 / 64 samples
+Fra:1 Mem:189.47M (Peak 193.14M) | Time:00:00.11 | Rendering 25 / 64 samples
+Fra:1 Mem:189.47M (Peak 193.14M) | Time:00:00.14 | Rendering 50 / 64 samples
+Fra:1 Mem:189.47M (Peak 193.14M) | Time:00:00.15 | Rendering 64 / 64 samples
+Saved: 'C:\TestCode\Abrams\model_work\fullbody\preview_side.png'
+Time: 00:00.21 (Saving: 00:00.04)
+
+Added face-only skinned fur strands: 7386
+Info: Saved as "sulley_fullbody.blend"
+
+FBX export starting... 'C:\\TestCode\\Abrams\\tools\\Reduced_CSDK_12\\content\\citadel_addons\\sulley_fullbody\\models\\heroes_wip\\abrams\\sulley_body.fbx'
+(bpy.data.armatures['Armature'], 'POSE')
+export finished in 0.1689 sec.
+
+FBX export starting... 'C:\\TestCode\\Abrams\\tools\\Reduced_CSDK_12\\content\\citadel_addons\\sulley_fullbody\\models\\heroes_wip\\abrams\\sulley_face.fbx'
+(bpy.data.armatures['Armature'], 'POSE')
+export finished in 0.0884 sec.
+FULLBODY BUILD COMPLETE [{'mesh': 'body', 'vertices': 35336, 'bones': 46, 'min_m': [-1.0362011194229126, -0.23606935143470764, 0.015008652582764626], 'max_m': [1.0362040996551514, 0.9101458787918091, 2.9174857139587402]}, {'mesh': 'face', 'vertices': 292, 'bones': 1, 'min_m': [-0.10232864320278168, -0.10410965234041214, 2.7445380687713623], 'max_m': [0.10232540965080261, 0.00016034021973609924, 2.848806619644165]}]
+
+Blender quit
+C:\TestCode\Abrams\tools\Reduced_CSDK_12\content\citadel_addons\sulley_fullbody\models\heroes_wip\abrams\sulley_donor.vmdl
+Compiler process did not exit in 60 seconds; stopped this child after collecting its output.
+       Read 1 Input(s): 0ms
+       Generated Mips and Output: 0ms
+       Encoding 4x4x1 texture to ATI1N (Q=3): 0ms
+Could not identify additional content file: 'c:\testcode\abrams\model_work\fullbody\sulley_fullbody.blend'
+
+-----------------------------------------------------------------
+ OK: 1 compiled, 0 failed, 0 skipped, 0m:04s
+-----------------------------------------------------------------
+Fresh donor: C:\TestCode\Abrams\tools\Reduced_CSDK_12\game\citadel_addons\sulley_fullbody\models\heroes_wip\abrams\sulley_donor.vmdl_c
+Bind comparison: position inches 0.10471910135206011 basis error 0.0026006291171757345
+CTRL abrams_model -> donor body mdat=109
+CTRL abrams_face_model -> donor face mdat=113
+CTRL abrams_face_model_lod1 -> donor face mdat=113
+CTRL abrams_model_lod1 -> donor body mdat=109
+CTRL abrams_face_model_lod2 -> donor face mdat=113
+CTRL abrams_model_lod2 -> donor body mdat=109
+CTRL abrams_face_model_lod3 -> donor face mdat=113
+CTRL abrams_model_lod3 -> donor body mdat=109
+remaps: body=46 face=1 total=838 (was 2810)
+  face bones: ['head']
+wrote C:\TestCode\Abrams\model_work\fullbody\abrams_fullbody.vmdl_c (9953271 bytes) blocks=117
+RERL paths:
+  OK animgraphs/animgraph2/hero/hero.vnmgraph+abrams.vnmgraph
+  OK animgraphs/animgraph2/hero/hero_ui.vnmgraph+abrams.vnmgraph
+  OK models/heroes_wip/abrams/abrams.vnmskel
+     models/heroes_wip/abrams/abrams_book/materials/abrams_book.vmat
+     models/heroes_wip/abrams/materials/abrams_coat.vmat
+     models/heroes_wip/abrams/materials/abrams_gun.vmat
+     models/heroes_wip/abrams/materials/abrams_head.vmat
+     models/heroes_wip/abrams/materials/abrams_lower_body.vmat
+     models/heroes_wip/abrams/materials/abrams_teeth.vmat
+     models/heroes_wip/abrams/materials/abrams_upper_body.vmat
+     particles/abilities/abrams/abrams_ambient_book.vpcf
+     particles/abilities/abrams/abrams_anim_leap_inair.vpcf
+     particles/abilities/ghost/ghost_life_drain_cast_preview_fire.vpcf
+     particles/models/heroes_wip/abrams/abrams/book_cover_trace_fx_model.vsnap
+     particles/models/heroes_wip/abrams/abrams/book_trace_fx_model.vsnap
+     scripts/tagged_sounds/abrams_anim_sounds.vdata
+reload meshes: ['abrams_model', 'abrams_face_model', 'gun_model', 'book_model', 'abrams_face_model_lod1', 'abrams_model_lod1', 'book_model_lod1', 'gun_model_lod1', 'abrams_face_model_lod2', 'abrams_model_lod2', 'book_model_lod2', 'gun_model_lod2', 'abrams_face_model_lod3', 'abrams_model_lod3', 'book_model_lod3', 'gun_model_lod3']
+reload remaps 838 starts [0, 46, 47, 120, 210, 211, 257, 347, 420, 421, 467, 556, 629, 630, 676, 765]
+AG2 refs present: True count 2
+NmSkeleton refs: True
+camera settings: {'m_flCameraSideOffset': -44.0, 'm_flCameraBackOffset': 111.0, 'm_flCameraBackOffsetAiming': 75.0, 'm_flCameraHeightStanding': 100.0}
+PACKAGED C:\TestCode\Abrams\release\fullbody\pak69_sulley_face_v2_dir.vpk
+--- Creating mesh: C:\TestCode\Abrams\model_work\fullbody\abrams_fullbody.vmdl_c.abrams_model
+--- Creating mesh: C:\TestCode\Abrams\model_work\fullbody\abrams_fullbody.vmdl_c.abrams_face_model
+--- Creating mesh: C:\TestCode\Abrams\model_work\fullbody\abrams_fullbody.vmdl_c.gun_model
+--- Creating mesh: C:\TestCode\Abrams\model_work\fullbody\abrams_fullbody.vmdl_c.book_model
+--- Writing model to file 'compiled.gltf'...
+--- Writing model to file 'compiled_physics.gltf'...
+10:04:57 | INFO: Data are loaded, start creating Blender stuff
+10:04:57 | INFO: Blender create Mesh node C:\TestCode\Abrams\model_work\fullbody\abrams_fullbody.vmdl_c.abrams_model
+10:04:58 | INFO: Blender create Mesh node C:\TestCode\Abrams\model_work\fullbody\abrams_fullbody.vmdl_c.abrams_face_model
+10:04:58 | INFO: Blender create Mesh node C:\TestCode\Abrams\model_work\fullbody\abrams_fullbody.vmdl_c.gun_model
+10:04:58 | INFO: Blender create Mesh node C:\TestCode\Abrams\model_work\fullbody\abrams_fullbody.vmdl_c.book_model
+10:04:59 | INFO: glTF import finished in 1.96s
+Blender 4.5.10 LTS (hash 6dc0b208d1b5 built 2026-05-19 01:33:42)
+Read blend: "C:\TestCode\Abrams\model_work\fullbody\sulley_fullbody.blend"
+Fra:36 Mem:172.48M (Peak 186.85M) | Time:00:13.70 | Rendering 1 / 64 samples
+Fra:36 Mem:172.48M (Peak 186.85M) | Time:00:13.86 | Rendering 25 / 64 samples
+Fra:36 Mem:172.48M (Peak 186.85M) | Time:00:13.98 | Rendering 50 / 64 samples
+Fra:36 Mem:172.48M (Peak 186.85M) | Time:00:14.03 | Rendering 64 / 64 samples
+Saved: 'C:\TestCode\Abrams\model_work\fullbody\compiled_previews\primary_stand_idle.png'
+Time: 00:14.13 (Saving: 00:00.09)
+
+Fra:7 Mem:170.05M (Peak 174.54M) | Time:00:00.10 | Rendering 1 / 64 samples
+Fra:7 Mem:170.05M (Peak 174.54M) | Time:00:00.13 | Rendering 25 / 64 samples
+Fra:7 Mem:170.05M (Peak 174.54M) | Time:00:00.15 | Rendering 50 / 64 samples
+Fra:7 Mem:170.05M (Peak 174.54M) | Time:00:00.17 | Rendering 64 / 64 samples
+Saved: 'C:\TestCode\Abrams\model_work\fullbody\compiled_previews\primary_run_n.png'
+Time: 00:00.21 (Saving: 00:00.02)
+
+Fra:4 Mem:168.75M (Peak 173.25M) | Time:00:00.06 | Rendering 1 / 64 samples
+Fra:4 Mem:168.75M (Peak 173.25M) | Time:00:00.08 | Rendering 25 / 64 samples
+Fra:4 Mem:168.75M (Peak 173.25M) | Time:00:00.10 | Rendering 50 / 64 samples
+Fra:4 Mem:168.75M (Peak 173.25M) | Time:00:00.11 | Rendering 64 / 64 samples
+Saved: 'C:\TestCode\Abrams\model_work\fullbody\compiled_previews\primary_stand_aim.png'
+Time: 00:00.15 (Saving: 00:00.02)
+
+Fra:8 Mem:170.03M (Peak 174.52M) | Time:00:00.06 | Rendering 1 / 64 samples
+Fra:8 Mem:170.03M (Peak 174.52M) | Time:00:00.08 | Rendering 25 / 64 samples
+Fra:8 Mem:170.03M (Peak 174.52M) | Time:00:00.11 | Rendering 50 / 64 samples
+Fra:8 Mem:170.03M (Peak 174.52M) | Time:00:00.12 | Rendering 64 / 64 samples
+Saved: 'C:\TestCode\Abrams\model_work\fullbody\compiled_previews\melee_quick_1.png'
+Time: 00:00.16 (Saving: 00:00.03)
+
+Fra:24 Mem:171.07M (Peak 175.56M) | Time:00:00.06 | Rendering 1 / 64 samples
+Fra:24 Mem:171.07M (Peak 175.56M) | Time:00:00.08 | Rendering 25 / 64 samples
+Fra:24 Mem:171.07M (Peak 175.56M) | Time:00:00.11 | Rendering 50 / 64 samples
+Fra:24 Mem:171.07M (Peak 175.56M) | Time:00:00.12 | Rendering 64 / 64 samples
+Saved: 'C:\TestCode\Abrams\model_work\fullbody\compiled_previews\slide_forward.png'
+Time: 00:00.16 (Saving: 00:00.02)
+
+Fra:5 Mem:169.99M (Peak 174.48M) | Time:00:00.06 | Rendering 1 / 64 samples
+Fra:5 Mem:169.99M (Peak 174.48M) | Time:00:00.08 | Rendering 25 / 64 samples
+Fra:5 Mem:169.99M (Peak 174.48M) | Time:00:00.11 | Rendering 50 / 64 samples
+Fra:5 Mem:169.99M (Peak 174.48M) | Time:00:00.12 | Rendering 64 / 64 samples
+Saved: 'C:\TestCode\Abrams\model_work\fullbody\compiled_previews\ability_charge.png'
+Time: 00:00.16 (Saving: 00:00.02)
+
+Fra:15 Mem:171.80M (Peak 176.29M) | Time:00:00.06 | Rendering 1 / 64 samples
+Fra:15 Mem:171.80M (Peak 176.29M) | Time:00:00.09 | Rendering 25 / 64 samples
+Fra:15 Mem:171.80M (Peak 176.29M) | Time:00:00.12 | Rendering 50 / 64 samples
+Fra:15 Mem:171.80M (Peak 176.29M) | Time:00:00.14 | Rendering 64 / 64 samples
+Saved: 'C:\TestCode\Abrams\model_work\fullbody\compiled_previews\ability_leap_smash.png'
+Time: 00:00.18 (Saving: 00:00.03)
+
+Rendered seven stock clips; in-game validation is still required.
+
+Blender quit
+Extensions: writing cache failed ([WinError 183] Cannot create a file when that file already exists: 'C:\\Users\\Owner\\AppData\\Roaming\\Blender Foundation\\Blender\\4.5\\extensions\\.cache').
+10:05:18 | INFO: Data are loaded, start creating Blender stuff
+10:05:18 | INFO: Blender create Mesh node C:\TestCode\Abrams\model_work\fullbody\abrams_fullbody.vmdl_c.abrams_model
+10:05:18 | INFO: Blender create Mesh node C:\TestCode\Abrams\model_work\fullbody\abrams_fullbody.vmdl_c.abrams_face_model
+10:05:18 | INFO: Blender create Mesh node C:\TestCode\Abrams\model_work\fullbody\abrams_fullbody.vmdl_c.gun_model
+10:05:18 | INFO: Blender create Mesh node C:\TestCode\Abrams\model_work\fullbody\abrams_fullbody.vmdl_c.book_model
+10:05:19 | INFO: glTF import finished in 1.94s
+Hypothetical center-ray clearance: True
+Blender 4.5.10 LTS (hash 6dc0b208d1b5 built 2026-05-19 01:33:42)
+
+Blender quit
+Prototype rebuilt. In-game acceptance remains required; see model_work\fullbody\README.md.

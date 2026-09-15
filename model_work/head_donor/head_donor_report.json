@@ -1,0 +1,32 @@
+{
+  "revision": "head_donor_v3",
+  "old_body_vertices": 35336,
+  "body_vertices_after_old_face_removal": 3562,
+  "donor_face_vertices": 472,
+  "body_bounds_m": {
+    "min": [
+      -40.795318603515625,
+      -9.294069290161133,
+      0.5908918380737305
+    ],
+    "max": [
+      40.79543685913086,
+      35.832515716552734,
+      111.32389068603516
+    ]
+  },
+  "face_bounds_m": {
+    "min": [
+      -9.171443939208984,
+      -8.450282096862793,
+      95.7769775390625
+    ],
+    "max": [
+      9.836281776428223,
+      15.83055591583252,
+      114.81253051757812
+    ]
+  },
+  "donor_source": "C:\\TestCode\\Abrams\\model_work\\head_donor\\sulley_donor_source.glb",
+  "approach": "Single transform of the new donor head; no procedural facial edits or fur strands."
+}

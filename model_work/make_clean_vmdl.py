@@ -17,7 +17,7 @@ ROOT = Path(r"C:\TestCode\Abrams")
 SRC = ROOT / r"extracted\custom_abrams_pak87\decompiled"
 CONTENT = (
     ROOT
-    / r"tools\Reduced_CSDK_12\content\citadel_addons\sully_abrams\models\heroes_wip\abrams"
+    / r"tools\Reduced_CSDK_12\content\citadel_addons\sulley_fullbody\models\heroes_wip\abrams"
 )
 HEADER = (
     "<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} "

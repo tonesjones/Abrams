@@ -1,0 +1,18 @@
+Blender 4.5.10 LTS (hash 6dc0b208d1b5 built 2026-05-19 01:33:42)
+Read blend: "C:\TestCode\Abrams\model_work\fullbody\sulley_fullbody.blend"
+Fra:1 Mem:166.69M (Peak 180.85M) | Time:00:13.95 | Rendering 1 / 64 samples
+Fra:1 Mem:166.69M (Peak 180.85M) | Time:00:14.11 | Rendering 25 / 64 samples
+Fra:1 Mem:166.69M (Peak 180.85M) | Time:00:14.13 | Rendering 50 / 64 samples
+Fra:1 Mem:166.69M (Peak 180.85M) | Time:00:14.15 | Rendering 64 / 64 samples
+Saved: 'C:\TestCode\Abrams\model_work\fullbody\face_front.png'
+Time: 00:14.29 (Saving: 00:00.12)
+
+Fra:1 Mem:166.73M (Peak 170.39M) | Time:00:00.09 | Rendering 1 / 64 samples
+Fra:1 Mem:166.73M (Peak 170.39M) | Time:00:00.12 | Rendering 25 / 64 samples
+Fra:1 Mem:166.73M (Peak 170.39M) | Time:00:00.15 | Rendering 50 / 64 samples
+Fra:1 Mem:166.73M (Peak 170.39M) | Time:00:00.17 | Rendering 64 / 64 samples
+Saved: 'C:\TestCode\Abrams\model_work\fullbody\face_threequarter.png'
+Time: 00:00.23 (Saving: 00:00.04)
+
+
+Blender quit

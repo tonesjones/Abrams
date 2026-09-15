@@ -1,0 +1,65 @@
+Creating device for graphics adapter 0 'NVIDIA GeForce RTX 4070 SUPER' [vendorid 0x10DE]: 32.0.15.9186
+- citadel_addons\sulley_head_donor\models\heroes_wip\abrams\sulley_donor.vmdl
+- citadel_addons\sulley_head_donor\models\heroes_wip\abrams\materials\sulley_head_donor_body.vmat
+  +- citadel_addons\sulley_head_donor\materials\default\default_black_mask_tga_e7be3cc.vtex
+       Read 1 Input(s): 0ms
+       Generated Mips and Output: 0ms
+       Encoding 16x16x1 texture to BC7 (Q=3): 29ms
+  +- citadel_addons\sulley_head_donor\models\heroes_wip\abrams\materials\sulley_head_donor_body_png_8bbbaa17.vtex
+       Read 2 Input(s): 149ms
+       Generated Mips and Output: 32ms
+       Encoding 2048x2048x1 texture to BC7 (Q=3): 530ms
+  +- citadel_addons\sulley_head_donor\materials\default\default_mask_tga_344101f8.vtex
+       Read 1 Input(s): 0ms
+       Generated Mips and Output: 0ms
+       Encoding 4x4x1 texture to ATI1N (Q=3): 0ms
+  +- citadel_addons\sulley_head_donor\materials\default\default_mask_tga_344101f8.vtex
+       Read 1 Input(s): 0ms
+       Generated Mips and Output: 0ms
+       Encoding 4x4x1 texture to ATI1N (Q=3): 0ms
+  +- citadel_addons\sulley_head_donor\models\heroes_wip\abrams\materials\sulley_head_donor_body_normal_png_138a7f39.vtex
+       Read 2 Input(s): 65ms
+       Generated Mips and Output: 40ms
+       Encoding 2048x2048x1 texture to BC7 (Q=3): 2121ms
+  +- citadel_addons\sulley_head_donor\materials\default\default_mask_tga_8d0774e6.vtex
+       Read 2 Input(s): 0ms
+       Generated Mips and Output: 0ms
+       Encoding 4x4x1 texture to ATI2N (Q=3): 0ms
+  +- citadel_addons\sulley_head_donor\models\heroes_wip\abrams\materials\sulley_head_donor_body_vmat_g_tambientocclusion_77e119ed.vtex
+       Read 1 Input(s): 0ms
+       Generated Mips and Output: 0ms
+       Encoding 4x4x1 texture to ATI1N (Q=3): 0ms
+- citadel_addons\sulley_head_donor\models\heroes_wip\abrams\materials\sulley_head_donor_face.vmat
+  +- citadel_addons\sulley_head_donor\materials\default\default_black_mask_tga_e7be3cc.vtex
+       Read 1 Input(s): 0ms
+       Generated Mips and Output: 0ms
+       Encoding 16x16x1 texture to BC7 (Q=3): 0ms
+  +- citadel_addons\sulley_head_donor\models\heroes_wip\abrams\materials\sulley_head_donor_face_png_446d8f9b.vtex
+       Read 2 Input(s): 130ms
+       Generated Mips and Output: 20ms
+       Encoding 2048x2048x1 texture to BC7 (Q=3): 547ms
+  +- citadel_addons\sulley_head_donor\materials\default\default_mask_tga_344101f8.vtex
+       Read 1 Input(s): 0ms
+       Generated Mips and Output: 0ms
+       Encoding 4x4x1 texture to ATI1N (Q=3): 0ms
+  +- citadel_addons\sulley_head_donor\materials\default\default_mask_tga_344101f8.vtex
+       Read 1 Input(s): 0ms
+       Generated Mips and Output: 0ms
+       Encoding 4x4x1 texture to ATI1N (Q=3): 0ms
+  +- citadel_addons\sulley_head_donor\models\heroes_wip\abrams\materials\sulley_head_donor_face_vmat_g_tnormalroughness_4ef06929.vtex
+       Read 2 Input(s): 0ms
+       Generated Mips and Output: 0ms
+       Encoding 4x4x1 texture to BC7 (Q=3): 0ms
+  +- citadel_addons\sulley_head_donor\materials\default\default_mask_tga_8d0774e6.vtex
+       Read 2 Input(s): 0ms
+       Generated Mips and Output: 0ms
+       Encoding 4x4x1 texture to ATI2N (Q=3): 0ms
+  +- citadel_addons\sulley_head_donor\models\heroes_wip\abrams\materials\sulley_head_donor_face_vmat_g_tambientocclusion_77e119ed.vtex
+       Read 1 Input(s): 0ms
+       Generated Mips and Output: 0ms
+       Encoding 4x4x1 texture to ATI1N (Q=3): 0ms
+Could not identify additional content file: 'c:\testcode\abrams\model_work\head_donor\sulley_head_donor.blend'
+
+-----------------------------------------------------------------
+ OK: 1 compiled, 0 failed, 0 skipped, 0m:05s
+-----------------------------------------------------------------

@@ -1,0 +1,65 @@
+Creating device for graphics adapter 0 'NVIDIA GeForce RTX 4070 SUPER' [vendorid 0x10DE]: 32.0.15.9186
+- citadel_addons\sulley_fullbody\models\heroes_wip\abrams\sulley_donor.vmdl
+- citadel_addons\sulley_fullbody\models\heroes_wip\abrams\materials\sulley_fullbody_body.vmat
+  +- citadel_addons\sulley_fullbody\materials\default\default_black_mask_tga_e7be3cc.vtex
+       Read 1 Input(s): 3ms
+       Generated Mips and Output: 0ms
+       Encoding 16x16x1 texture to BC7 (Q=3): 41ms
+  +- citadel_addons\sulley_fullbody\models\heroes_wip\abrams\materials\sulley_fullbody_body_png_e6a1b844.vtex
+       Read 2 Input(s): 56ms
+       Generated Mips and Output: 28ms
+       Encoding 2048x2048x1 texture to BC7 (Q=3): 531ms
+  +- citadel_addons\sulley_fullbody\materials\default\default_mask_tga_344101f8.vtex
+       Read 1 Input(s): 3ms
+       Generated Mips and Output: 0ms
+       Encoding 4x4x1 texture to ATI1N (Q=3): 0ms
+  +- citadel_addons\sulley_fullbody\materials\default\default_mask_tga_344101f8.vtex
+       Read 1 Input(s): 0ms
+       Generated Mips and Output: 0ms
+       Encoding 4x4x1 texture to ATI1N (Q=3): 0ms
+  +- citadel_addons\sulley_fullbody\models\heroes_wip\abrams\materials\sulley_fullbody_body_normal_png_f491d506.vtex
+       Read 2 Input(s): 64ms
+       Generated Mips and Output: 39ms
+       Encoding 2048x2048x1 texture to BC7 (Q=3): 2070ms
+  +- citadel_addons\sulley_fullbody\materials\default\default_mask_tga_8d0774e6.vtex
+       Read 2 Input(s): 0ms
+       Generated Mips and Output: 0ms
+       Encoding 4x4x1 texture to ATI2N (Q=3): 0ms
+  +- citadel_addons\sulley_fullbody\models\heroes_wip\abrams\materials\sulley_fullbody_body_vmat_g_tambientocclusion_77e119ed.vtex
+       Read 1 Input(s): 0ms
+       Generated Mips and Output: 0ms
+       Encoding 4x4x1 texture to ATI1N (Q=3): 0ms
+- citadel_addons\sulley_fullbody\models\heroes_wip\abrams\materials\sulley_fullbody_eyes.vmat
+  +- citadel_addons\sulley_fullbody\materials\default\default_black_mask_tga_e7be3cc.vtex
+       Read 1 Input(s): 0ms
+       Generated Mips and Output: 0ms
+       Encoding 16x16x1 texture to BC7 (Q=3): 0ms
+  +- citadel_addons\sulley_fullbody\models\heroes_wip\abrams\materials\sulley_fullbody_eyes_png_78cba0b3.vtex
+       Read 2 Input(s): 21ms
+       Generated Mips and Output: 20ms
+       Encoding 2048x2048x1 texture to BC7 (Q=3): 6ms
+  +- citadel_addons\sulley_fullbody\materials\default\default_mask_tga_344101f8.vtex
+       Read 1 Input(s): 0ms
+       Generated Mips and Output: 0ms
+       Encoding 4x4x1 texture to ATI1N (Q=3): 0ms
+  +- citadel_addons\sulley_fullbody\materials\default\default_mask_tga_344101f8.vtex
+       Read 1 Input(s): 0ms
+       Generated Mips and Output: 0ms
+       Encoding 4x4x1 texture to ATI1N (Q=3): 0ms
+  +- citadel_addons\sulley_fullbody\models\heroes_wip\abrams\materials\sulley_fullbody_eyes_vmat_g_tnormalroughness_d62ad136.vtex
+       Read 2 Input(s): 0ms
+       Generated Mips and Output: 0ms
+       Encoding 4x4x1 texture to BC7 (Q=3): 0ms
+  +- citadel_addons\sulley_fullbody\materials\default\default_mask_tga_8d0774e6.vtex
+       Read 2 Input(s): 0ms
+       Generated Mips and Output: 0ms
+       Encoding 4x4x1 texture to ATI2N (Q=3): 0ms
+  +- citadel_addons\sulley_fullbody\models\heroes_wip\abrams\materials\sulley_fullbody_eyes_vmat_g_tambientocclusion_77e119ed.vtex
+       Read 1 Input(s): 0ms
+       Generated Mips and Output: 0ms
+       Encoding 4x4x1 texture to ATI1N (Q=3): 0ms
+Could not identify additional content file: 'c:\testcode\abrams\model_work\fullbody\sulley_fullbody.blend'
+
+-----------------------------------------------------------------
+ OK: 1 compiled, 0 failed, 0 skipped, 0m:04s
+-----------------------------------------------------------------
